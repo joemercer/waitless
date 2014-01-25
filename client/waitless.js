@@ -98,9 +98,13 @@ Template.times.times = function() {
 	var minutes = 0;
 	for (var i = 0; i < 5; i++) {
 		var time_now = new Date();
-		var time = new Date(time_now.getTime() + minutes*60000);
+		var minutes_now = (time_now.getHours() * 60) + time_now.getMinutes() + minutes;
+		var closest_time = 5 * Math.round(minutes_now/5);
+		var next_time = Order_Times.findOne({numMinutes: closest_time})
 
-		available_times.push(time.getHours() + ':' + time.getMinutes());
+		if(next_time) {
+			available_times.push(next_time.label);
+		}
 		minutes += 5;
 	}
 	return available_times;
