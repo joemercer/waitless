@@ -78,7 +78,8 @@ Template.storeView.itemName = function(order) {
 };
 
 Template.storeView.pickupTime = function(order) {
-	return order.time_of_pickup;
+	var time = new Date(order.time_of_pickup);
+	return time.getHours() + ':' + time.getMinutes();
 };
 
 // # Logged In
