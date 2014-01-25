@@ -233,7 +233,7 @@
     <div class="buy_process" id="buy_confirm" style="display: none">
       <div class="confirm_item">
         <div class="coffee_cup"></div>
-          <p>medium - <span>Double Double</span> - SLC</p>
+          {{> confirmation}}
       </div><!-- confirm_item -->
       <div class="item_price">
         <img id="coffee_graphic" src="/img/small_coffee_mug.png">
@@ -286,4 +286,8 @@
       <li class="select-time">{{label}}</li>
     {{/each}}
   </ul>
+</template>
+
+<template name="confirmation">
+  {{confirmation}}
 </template>

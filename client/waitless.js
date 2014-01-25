@@ -112,6 +112,22 @@ Template.times.times = function() {
 	return available_times;
 };
 
+// # confirmation
+Template.confirmation.confirmation = function() {
+	var order = Session.get("order");
+	var store = Stores.findOne(order.store_id);
+	if (store) {
+		if (order.items) {
+			var item = Products.findOne(order.items[0].product);
+			if (order.time_of_pickup) {
+				return store.name + ' - ' + store.location + ' : ' + order.items[0].size + ' ' + item.item + ' at time ' + order.time_of_pickup;
+			}
+			return store.name + ' - ' + store.location + ' : ' + order.items[0].size + ' ' + item.item;
+		}
+		return store.name + ' - ' + store.location;
+	}
+}
+
 
 // # Router
 // ________
