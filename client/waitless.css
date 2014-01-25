@@ -397,7 +397,7 @@ body #login-buttons .login-buttons-with-only-one-button .login-button {
 body .login_wrapper {
   display: block;
   margin: auto;
-  background: #353b3d url('img/login/login_bg.jpg') center center no-repeat;
+  background: #353b3d url('/img/login/login_bg.jpg') center center no-repeat;
   background-size: cover;
   width: 100%;
   height: 100vh;
