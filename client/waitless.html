@@ -21,17 +21,41 @@
 
   {{#if partial 'home'}}
   	{{> home}}
-  {{else}} {{#if partial 'store'}}
-  	{{> store}}
-  {{/if}} {{/if}}
+  {{else}} {{#if partial 'profile'}}
+  	{{> profile}}
+  {{else}} {{#if partial 'createStore'}}
+  	{{> createStore}}
+  {{else}} {{#if partial 'createProduct'}}
+  	{{> createProduct}}
+  {{else}} {{#if partial 'createOrder'}}
+  	{{> createOrder}}
+  {{/if}} {{/if}} {{/if}} {{/if}} {{/if}}
 </template>
 
 <template name="home">
   <h2>HOME</h2>
-  <button class="goto-store">Go to store</button>
+  <button class="goto-create-order">Create Order</button>
+  <button class="goto-profile">Go to profile</button>
 </template>
 
-<template name="store">
-  <h2>STORE</h2>
+<template name="profile">
+  <h2>Profile</h2>
+  <button class="goto-home">Go Home</button>
+  <button class="goto-create-store">Create Store</button>
+  <button class="goto-create-product">Create Product</button>
+</template>
+
+<template name="createStore">
+  <h2>Create Store</h2>
+  <button class="goto-home">Go Home</button>
+</template>
+
+<template name="createProduct">
+  <h2>Create Product</h2>
+  <button class="goto-home">Go Home</button>
+</template>
+
+<template name="createOrder">
+  <h2>Create Order</h2>
   <button class="goto-home">Go Home</button>
 </template>

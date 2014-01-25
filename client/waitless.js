@@ -11,15 +11,51 @@ Template.loggedIn.helpers({
 // ______
 
 Template.home.events({
-	'click .goto-store': function() {
-		router.storeView('storeName');
+	'click .goto-create-order': function() {
+		router.createOrderView();
+	},
+	'click .goto-profile': function() {
+		router.profileView();
 	}
 });
 
-// # Store
+// # Profile
+// _________
+
+Template.profile.events({
+	'click .goto-home': function() {
+		router.home();
+	},
+	'click .goto-create-store': function() {
+		router.createStoreView();
+	},
+	'click .goto-create-product': function() {
+		router.createProductView();
+	}
+});
+
+// # Create Store
 // ______
 
-Template.store.events({
+Template.createStore.events({
+	'click .goto-home': function() {
+		router.home();
+	}
+});
+
+// # Create Product
+// ______
+
+Template.createProduct.events({
+	'click .goto-home': function() {
+		router.home();
+	}
+});
+
+// # Place Order
+// _____________
+
+Template.createOrder.events({
 	'click .goto-home': function() {
 		router.home();
 	}
@@ -32,17 +68,30 @@ Template.store.events({
 var Router = Backbone.Router.extend({
   routes: {
   	'': 'homeView',
-    ":store": "storeView"
+    'profile': 'profileView',
+    'profile/createStore': 'createStoreView',
+    'profile/createProduct': 'createProductView',
+    'createOrder': 'createOrderView'
   },
-  home: function() {
-  	console.log('home');
+  home: function () {
   	Session.set('partial', 'home');
   	this.navigate('', true);
   },
-  storeView: function (store) {
-  	console.log('store');
-  	Session.set('partial', 'store');
-  	this.navigate(store, true);
+  profileView: function () {
+  	Session.set('partial', 'profile');
+  	this.navigate('profile', true);
+  },
+  createStoreView: function () {
+  	Session.set('partial', 'createStore');
+  	this.navigate('profile/createStore', true);
+  },
+ 	createProductView: function () {
+  	Session.set('partial', 'createProduct');
+  	this.navigate('profile/createProduct', true);
+  },
+  createOrderView: function () {
+  	Session.set('partial', 'createOrder');
+  	this.navigate('createOrder', true);
   }
 });
 
