@@ -98,10 +98,37 @@ p{
 
 /* BODY */
 body{
+	.back{
+		.block;
+		.absolute;
+		padding: 5px 9px;
+		border: 1px solid @eggshell;
+		.borderradius(2px);
+		margin: 5px 3px;
+		font-size: 14px;
+		.transition;
+	}
+	.back:hover{
+		background: rgba(91,77,68,0.3);
+	}
+	#login-buttons{ 
+		.configure-button{
+			background: none !important;
+			box-shadow: none !important;
+			border: 0px;
+			text-shadow: none;
+		}
+		.login-image{
+			display: none !important;
+		}
+		.text-besides-image{
+			margin: 0px;
+		}
+	}//login-buttons
 	.login_wrapper{
 		.block;
 		margin: auto;
-		background: @bg url('img/login/login_bg.jpg') center center no-repeat;
+		background: @bg url('/img/login/login_bg.jpg') center center no-repeat;
 		background-size: cover;
 		width: 100%;
 		height: 100vh;
@@ -148,6 +175,25 @@ body{
 			#login_store:hover{
 				background-color: rgba(239,230,207,0.7);
 				.fasttransition;
+			}
+			input {
+				padding: 18px 0px;
+				background-color: rgba(239,230,207,0.15);
+				margin: 3px auto;
+				.center;
+				.borderradius(2px);
+				width: 80%;
+				font-size: 14px;
+				border: 1px solid rgba(202, 202, 202, 0.25);
+
+			}
+			input[type="submit"]{
+				background-color: transparent;
+				border: 1px solid @eggshell;
+				font-size: 14px;
+			}
+			input[type="submit"]:hover{
+				background: rgba(91, 77, 68, 0.2);
 			}
 		}//login_input
 		#copyright{

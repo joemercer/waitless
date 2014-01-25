@@ -1,5 +1,11 @@
 <head>
-  <title>waitless</title>
+  <title>Waitless</title>
+    <meta name="author" content="Nicole Jiang, Bonnie Li & Joe Mercer">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=false">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="waitless.css">
 </head>
 
 <body>
@@ -11,21 +17,46 @@
 </body>
 
 <template name="loggedOut">
-  <h1>Logged Out</h1>
-  {{loginButtons}}
-  <button class="goto-store-login">Login as Store</button>
-
   {{#if partial 'storeLogin'}}
   	{{> storeLogin}}
   {{else}} {{#if partial 'storeView'}}
   	{{> storeView}}
+  {{else}} 
+    {{> login_state}}
   {{/if}} {{/if}}
 </template>
 
+<template name="login_state">
+  <div class="login_wrapper wrapper">
+    <div class="login_logo">
+      <img id="logo_graphic" alt="waitless" src="img/login/logo.png">
+      <img id="logo_title" src="img/login/logo_title.png">
+      <h3>why wait when you can order online!</h3>
+    </div><!-- end login_logo -->
+    <div class="login_input">
+      <a id="login_user" href="">{{loginButtons}}</a>
+      <a class="goto-store-login" id="login_store">you brew coffee</a>
+    </div><!-- end  login_input-->
+    <p id="copyright">waitless is made by nicole, bonnie, and joe</p> 
+  </div><!-- end login_wrapper -->
+</template>
+
 <template name="storeLogin">
-  <h2>Store Login</h2>
-  <button class="goto-home">Go Home</button>
-  <button class="goto-store-view">Log into Store - Store View</button>
+  <div class="login_wrapper wrapper">
+    <a class="goto-home back">back</a>
+    <div class="login_logo">
+      <img id="logo_graphic" alt="waitless" src="img/login/logo.png">
+      <img id="logo_title" src="img/login/logo_title.png">
+      <h3>you are a store - login</h3>
+    </div><!-- end login_logo -->
+
+    <div class="login_input">
+      <input type="text" placeholder="username">
+      <input type="password" placeholder="password">
+      <input type="submit" class="goto-store-view" value="login">
+    </div><!-- end  login_input-->
+    <p id="copyright">waitless is made by nicole, bonnie, and joe</p> 
+  </div><!-- end login_wrapper -->
 </template>
 
 <template name="storeView">
@@ -35,7 +66,6 @@
 
 <template name="loggedIn">
   <h1>Logged In</h1>
-  {{loginButtons}}
 
   {{#if partial 'home'}}
   	{{> home}}
