@@ -70,21 +70,22 @@ Template.profile.events({
 // # Place Order
 // _____________
 
+Session.set('activeStore', null);
+
 Template.createOrder.events({
 	'click .goto-home': function() {
 		router.home();
 	}
 });
 
+// # products
+// __________
 
-
-
-// # Store Flow
-// ============
-
-// # storeLoggedIn
-// _________________
-
+Template.products.products = function() {
+	var storeId = Session.get('activeStore');
+	if (!storeId) return;
+	return Products.find({store_id: storeId});
+};
 
 
 

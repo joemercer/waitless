@@ -20,6 +20,17 @@ if (Meteor.isClient) {
     }
   })
 
+  Template.products.helpers({
+    findProducts: function(store_id) {
+      var products = Products.find({store_id: store_id});
+      if (products) {
+        return products;
+      } else {
+        return ['none'];
+      }
+    }
+  })
+
   // Template.users.helpers({
   //   users: function() {
   //     return Users.find();
