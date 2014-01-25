@@ -194,13 +194,13 @@ body{
 	.login_wrapper{
 		.block;
 		margin: auto;
-		background: @bg url('/img/login/login_bg.jpg') center center no-repeat;
+		background: @bg url('img/login/login_bg.jpg') center center no-repeat;
 		background-size: cover;
 		width: 100%;
 		height: 100vh;
 		.login_logo{
 			.block;
-			padding: 70px 0px 40px 0px;
+			padding: 70px 0px 20px 0px;
 			.center;
 			#logo_graphic{
 				width: 55px;
@@ -572,6 +572,7 @@ body{
 				margin: auto;
 			}//p			
 			.profile_pic{
+				.block;
 				width: 75px;
 				height: 75px;
 				overflow: hidden;
@@ -594,6 +595,10 @@ body{
 				.fasttransition;
 				cursor: pointer;
 				background: rgba(239, 230, 207, 0.15);
+				p:first-child{
+					background: transparent url('/img/mono_coffee_cup.png') 10px center no-repeat;
+					background-size: 13px;
+				}
 				.brew_cell{
 					display: table-cell;
 					padding: 9px 8px;

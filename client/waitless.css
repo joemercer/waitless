@@ -374,14 +374,14 @@ body #login-buttons .login-buttons-with-only-one-button .login-button {
 body .login_wrapper {
   display: block;
   margin: auto;
-  background: #353b3d url('/img/login/login_bg.jpg') center center no-repeat;
+  background: #353b3d url('img/login/login_bg.jpg') center center no-repeat;
   background-size: cover;
   width: 100%;
   height: 100vh;
 }
 body .login_wrapper .login_logo {
   display: block;
-  padding: 70px 0px 40px 0px;
+  padding: 70px 0px 20px 0px;
   text-align: center;
 }
 body .login_wrapper .login_logo #logo_graphic {
@@ -804,6 +804,7 @@ body .brewlist_wrapper .profile_header p {
   margin: auto;
 }
 body .brewlist_wrapper .profile_header .profile_pic {
+  display: block;
   width: 75px;
   height: 75px;
   overflow: hidden;
@@ -834,6 +835,10 @@ body .brewlist_wrapper ul#brewlist li {
   transition: all 0.25s ease 0s;
   cursor: pointer;
   background: rgba(239, 230, 207, 0.15);
+}
+body .brewlist_wrapper ul#brewlist li p:first-child {
+  background: transparent url('/img/mono_coffee_cup.png') 10px center no-repeat;
+  background-size: 13px;
 }
 body .brewlist_wrapper ul#brewlist li .brew_cell {
   display: table-cell;
