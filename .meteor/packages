@@ -10,3 +10,5 @@ preserve-inputs
 accounts-ui
 accounts-facebook
 jquery
+underscore
+backbone
