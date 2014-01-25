@@ -24,7 +24,7 @@ Template.storeLogin.events({
 		router.home();
 	},
 	'click .goto-store-view': function() {
-		router.storeView();
+		router.storeView('fakeStoreName');
 	}
 });
 
