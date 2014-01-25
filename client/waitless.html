@@ -37,7 +37,7 @@
       <a id="login_user">Thirsty?{{loginButtons}}</a>
       <a class="goto-store-login" id="login_store">you brew coffee</a>
     </div><!-- end  login_input-->
-    <p id="copyright">waitless is made by nicole, bonnie, and joe</p>
+    <p id="copyright">waitless is made by nicole, bonnie, joe & constance</p>
   </div><!-- end login_wrapper -->
 </template>
 
@@ -45,16 +45,16 @@
   <div class="login_wrapper wrapper">
     <a class="goto-home back">back</a>
     <div class="login_logo">
-      <img id="logo_graphic" alt="waitless" src="img/login/logo.gif">
+      <img id="logo_graphic" alt="waitless" src="img/logo.gif">
       <img id="logo_title" src="img/login/logo_title.png">
       <h3>you are a store - login</h3>
     </div><!-- end login_logo -->
     <div class="login_input">
-      <input type="text" placeholder="username">
+      <input id="store_username" type="text" placeholder="username">
       <input type="password" placeholder="password">
       <input type="submit" class="goto-store-view" value="login">
     </div><!-- end  login_input-->
-    <p id="copyright">waitless is made by nicole, bonnie, and joe</p>
+    <p id="copyright">waitless is made by nicole, bonnie, joe & constance</p>
   </div><!-- end login_wrapper -->
 </template>
 
@@ -64,36 +64,20 @@
     <a class="back goto-home">back</a>
     <div class="profile_header">
       <div class="profile_pic">
-        <img src="/img/profile_pic.jpg">
+        {{> profile_pic}}
       </div>
       <p>Let's get brewing started!</p>
     </div>
     <img class="dash" src="/img/dash_coming.png">
     <ul id="brewlist">
-      <li>
-        <img class="brew_cell" src="/img/mono_coffee_cup.png">
-        <p class="brew_cell" >medium hot chocolate</p>
-        <p class="brew_cell" >nicole jiang</p>
-        <p class="brew_cell" >11:30am</p>
-      </li>
-      <li>
-        <img class="brew_cell" src="/img/mono_coffee_cup.png">
-        <p class="brew_cell" >medium hot chocolate</p>
-        <p class="brew_cell" >nicole jiang</p>
-        <p class="brew_cell" >11:30am</p>
-      </li>
-      <li>
-        <img class="brew_cell" src="/img/mono_coffee_cup.png">
-        <p class="brew_cell" >medium hot chocolate</p>
-        <p class="brew_cell" >nicole jiang</p>
-        <p class="brew_cell" >11:30am</p>
-      </li>
-      <li>
-        <img class="brew_cell" src="/img/mono_coffee_cup.png">
-        <p class="brew_cell" >medium hot chocolate</p>
-        <p class="brew_cell" >nicole jiang</p>
-        <p class="brew_cell" >11:30am</p>
-      </li>
+			{{#each orders}}
+				<li>
+					<img class="brew_cell" src="/img/mono_coffee_cup.png">
+					<p class="brew_cell" >{{itemName this}}</p>
+					<p class="brew_cell" >{{username this}}</p>
+					<p class="brew_cell" >{{pickupTime this}}</p>
+				</li>
+			{{/each}}
     </ul><!-- end brewlist -->
 
     <a class="brew_complete">brew complete</a>
@@ -117,7 +101,7 @@
 <div class="dashboard_wrapper wrapper">
   <div class="goto-profile profile_header">
     <div class=" profile_pic">
-      <img src="/img/profile_pic.jpg">
+      {{> profile_pic}}
     </div>
     <p>feeling thirsty, buddy?</p>
   </div>
@@ -125,21 +109,15 @@
     <img id="section_divider" src="img/dash_quick_brew.png">
     <ul>
       <li>
+        <p id="coming_soon">Coming soon</p>
         <div class="coffee_cup"></div>
-        <p>medium</br>
+        <p id="coming_soon_text">medium</br>
           <span>Double Double</span></br>
           SLC
         </p>
       </li>
       <li>
-        <div class="coffee_cup"></div>
-        <p>medium</br>
-          <span>Double Double</span></br>
-          SLC
-        </p>
-      </li>
-      <li>
-        <div class="goto-create-order coffee_cup"></div>
+        <div class="goto-create-order coffee_cup_new"></div>
         <p>make</br>
           <span>SOMETHING</span></br>
           FRESH
@@ -149,18 +127,7 @@
   </div><!-- end quick_brew -->
   <div class="user_notification">
     <img id="section_divider" src="img/dash_notif.png">
-    <ul class="notification_wrapper">
-      <li>
-        <img src="img/mono_coffee_cup.png">
-        <p>You ordered double double from SLC</br><span>5 minutes ago</span></p>
-        <div class="clearfix"></div>
-      </li>
-      <li>
-        <img src="img/mono_coffee_cup.png">
-        <p>You ordered double double from SLC</br><span>5 minutes ago</span></p>
-        <div class="clearfix"></div>
-      </li>
-    </ul><!-- end notification_wrapper -->
+    {{> notifications}}
   </div>
 </div><!-- end dashboard_wrapper -->
 </template>
@@ -171,17 +138,19 @@
     <a class="back goto-home">back</a>
     <div class="profile_header">
       <div class="profile_pic">
-        <img src="/img/profile_pic.jpg">
+        {{> profile_pic}}
       </div>
       <p>this is your profile</p>
     </div>
     <img class="dash" src="/img/dash_brew.png">
     <ul class="coffee_edit">
       <li class ="goto-selectFavDrink">
+        <p id="coming_soon">Coming soon</p>
         <div class="coffee_cup"></div>
           <p>edit </br>quick brew</p>
       </li>
       <li>
+        <p id="coming_soon">Coming soon</p>
         <div class="coffee_cup"></div>
           <p>rebrew </br>all drinks</p>
       </li>
@@ -230,18 +199,12 @@
         <img src="/img/small_coffee_mug.png">
         <h3>brew my coffee at...</h3>
       </div>  <!-- end buy_header -->
-<!--       <ul>
-        <li class="active">4:30 am</li>
-        <li>4:35 am</li>
-        <li>4:40 am</li>
-        <li>4:45 am</li>
-      </ul> -->
       {{> times}}
     </div><!-- end buy_two -->
     <div class="buy_process" id="buy_confirm" style="display: none">
       <div class="confirm_item">
         <div class="coffee_cup"></div>
-          <p>medium - <span>Double Double</span> - SLC</p>
+          {{> confirmation}}
       </div><!-- confirm_item -->
       <div class="item_price">
         <img id="coffee_graphic" src="/img/small_coffee_mug.png">
@@ -275,7 +238,7 @@
 <template name="products">
   <ul id="products_list">
     {{#each products}}
-      <li class="select-product" style="cursor: pointer">{{_id}} - {{item}}</li>
+      <li class="select-product" style="cursor: pointer">{{item}}</li>
     {{/each}}
   </ul>
 </template>
@@ -283,17 +246,30 @@
 <template name="sizes">
   <ul id="product_sizes">
     {{#each sizes}}
-      <li class="select-size" style="cursor: pointer">{{size}}</li>
+      <li class="select-size" style="cursor: pointer">{{this}}</li>
     {{/each}}
-    <li>Large</li>
-    <li>X-Large</li>
   </ul>
 </template>
 
 <template name="times">
-  <ul id="select_time">
+  <ul id="times">
     {{#each times}}
-      <li>{{.}}</li>
+      <li class="select-time">{{label}}</li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="confirmation">
+  {{confirmation}}
+</template>
+
+<template name="notifications">
+  <ul class="notification_wrapper">
+    {{#each notifications }}
+      <li>
+        <img src="img/mono_coffee_cup.png">
+        <p>You ordered a {{product_info items}} from {{store_info store_id}} at {{time_of_pickup}}</p>
+      </li>
     {{/each}}
   </ul>
 </template>
@@ -347,3 +323,8 @@
 
   </div><!-- end order_wrapper -->
 </template>
+
+<template name="profile_pic">
+  <img src='{{profile_pic}}'>
+</template>
+
