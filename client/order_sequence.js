@@ -55,6 +55,8 @@ Meteor.startup(function () {
 				user_id: Meteor.user()._id,
 				items: order.items
 			});
+
+			router.home();
 		}
 	});
 

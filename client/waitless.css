@@ -357,7 +357,9 @@ body .profile_header .profile_pic {
   margin-left: -15px;
 }
 body .profile_header .profile_pic img {
-  width: 100%;
+  width: auto !important;
+  height: 100%;
+  margin-left: -50%;
 }
 body #login-buttons .configure-button {
   background: none !important;

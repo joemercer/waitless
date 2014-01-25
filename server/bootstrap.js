@@ -10,14 +10,17 @@ if (Meteor.isServer) {
       // First let's add some stores
       var storeData = [
         {
+          username: "timmiesSLC",
           name: "Tim Hortons",
           location: "SLC"
         },
         {
+          username: "timmiesDC",
           name: "Tim Hortons",
           location: "DC"
         },
         {
+          username: "thebucksyo",
           name: "Starbucks",
           location: "King and University"
         }
