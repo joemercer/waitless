@@ -93,8 +93,6 @@ p{
   border-radius: @radius;
 }
 
-
-
 /* BODY */
 body{
 	.back{
@@ -115,6 +113,21 @@ body{
 		background-size: contain;
 		padding: 45px;
 		margin: 15px 5px;
+	}
+	.coffee_cup_new{
+		background: transparent url('/img/coffee_cup_new.png') center center no-repeat;
+		background-size: contain;
+		padding: 45px;
+		margin: 15px 5px;
+	}
+	#coming_soon{
+		opacity: 0;
+		padding: 8px 12px;
+		color: @eggshell;
+		position: absolute;
+		border-radius: 2px;
+		z-index: 10;
+		font-weight: 700;
 	}
 	.dash{
 		width: 100%;
@@ -322,7 +335,7 @@ body{
 				li{
 					.inlineblock;
 					margin: 5px 5px;
-					.transition;
+					.fasttransition;
 					cursor: pointer;
 					p{
 						font-size: 12px;
@@ -336,6 +349,13 @@ body{
 				li:hover{
 					background: rgba(255, 255, 255, 0.07);
 					.borderradius(8px);
+					.coffee_cup{
+						opacity: 0.5;
+					}
+					#coming_soon{
+						opacity: 1;
+						margin-top: 59px;
+					}
 				}
 			}//ul
 		}//quick_brew
@@ -529,7 +549,18 @@ body{
 			li:hover{
 				.borderradius(4px);
 				background-color: rgba(255, 255, 255, 0.09);
-			}
+				.coffee_cup{
+					opacity: 0.2;
+				}
+				p{
+					opacity: 0.2;
+				}
+				#coming_soon{
+					opacity: 1;
+					margin-top: 21px;
+					margin-left: 22px;
+				}
+			}//li
 		}//coffee_edit
 		
 		img#profile_stats{

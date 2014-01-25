@@ -286,6 +286,21 @@ body .coffee_cup {
   padding: 45px;
   margin: 15px 5px;
 }
+body .coffee_cup_new {
+  background: transparent url('/img/coffee_cup_new.png') center center no-repeat;
+  background-size: contain;
+  padding: 45px;
+  margin: 15px 5px;
+}
+body #coming_soon {
+  opacity: 0;
+  padding: 8px 12px;
+  color: #efe6cf;
+  position: absolute;
+  border-radius: 2px;
+  z-index: 10;
+  font-weight: 700;
+}
 body .dash {
   width: 100%;
   padding-top: 10px;
@@ -531,11 +546,11 @@ body .dashboard_wrapper .quick_brew ul {
 body .dashboard_wrapper .quick_brew ul li {
   display: inline-block;
   margin: 5px 5px;
-  -webkit-transition: all 0.7s ease 0s;
-  -moz-transition: all 0.7s ease 0s;
-  -o-transition: all 0.7s ease 0s;
-  -ms-transition: all 0.7s ease 0s;
-  transition: all 0.7s ease 0s;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
   cursor: pointer;
 }
 body .dashboard_wrapper .quick_brew ul li p {
@@ -551,6 +566,13 @@ body .dashboard_wrapper .quick_brew ul li:hover {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
+}
+body .dashboard_wrapper .quick_brew ul li:hover .coffee_cup {
+  opacity: 0.5;
+}
+body .dashboard_wrapper .quick_brew ul li:hover #coming_soon {
+  opacity: 1;
+  margin-top: 59px;
 }
 body .dashboard_wrapper .user_notification {
   display: block;
@@ -760,6 +782,17 @@ body .profile_wrapper .coffee_edit li:hover {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.09);
+}
+body .profile_wrapper .coffee_edit li:hover .coffee_cup {
+  opacity: 0.2;
+}
+body .profile_wrapper .coffee_edit li:hover p {
+  opacity: 0.2;
+}
+body .profile_wrapper .coffee_edit li:hover #coming_soon {
+  opacity: 1;
+  margin-top: 21px;
+  margin-left: 22px;
 }
 body .profile_wrapper img#profile_stats {
   width: 65%;
