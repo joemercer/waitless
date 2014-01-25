@@ -573,11 +573,15 @@ body .order_wrapper #buy_two {
   background: #454c4e;
 }
 body .order_wrapper #buy_two .buy_header img {
-  width: 30px;
+  width: 60px;
   margin-bottom: 10px;
 }
 body .order_wrapper #buy_three {
   background: #4d6c6b;
+}
+body .order_wrapper #buy_three .buy_header img {
+  width: 110px;
+  margin-bottom: 10px;
 }
 body .order_wrapper #buy_three ul li:first-child {
   background: transparent url('/img/cup_small.png') 20px center no-repeat;
@@ -680,7 +684,7 @@ body .profile_wrapper {
   -ms-transition: all 0.7s ease 0s;
   transition: all 0.7s ease 0s;
   display: block;
-  background: #353b3d url('/img/dash_bg.jpg') center center no-repeat;
+  background: #3a3739;
   background-size: cover;
   width: 100%;
   height: 100vh;
