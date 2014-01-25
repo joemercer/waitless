@@ -165,7 +165,7 @@ Template.confirmation.confirmation = function() {
 		if (order.items) {
 			var item = Products.findOne(order.items[0].product);
 			if (order.time_of_pickup) {
-				return store.name + ' - ' + store.location + ' : ' + order.items[0].size + ' ' + item.item + ' at time ' + order.time_of_pickup;
+				return 'You ordered a ' + order.items[0].size + ' ' + item.item + ' from ' + store.location + ' and it will be available at ' + order.time_of_pickup;
 			}
 			return store.name + ' - ' + store.location + ' : ' + order.items[0].size + ' ' + item.item;
 		}
