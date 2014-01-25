@@ -143,7 +143,7 @@
   </div><!-- end quick_brew -->
   <div class="user_notification">
     <img id="section_divider" src="img/dash_notif.png">
-    <ul class="notification_wrapper">
+    <!-- <ul class="notification_wrapper">
       <li>
         <img src="img/mono_coffee_cup.png">
         <p>You ordered double double from SLC</br><span>5 minutes ago</span></p>
@@ -155,6 +155,7 @@
         <div class="clearfix"></div>
       </li>
     </ul><!-- end notification_wrapper -->
+    {{> notifications}}
   </div>
 </div><!-- end dashboard_wrapper -->
 </template>
@@ -286,4 +287,15 @@
 
 <template name="confirmation">
   {{confirmation}}
+</template>
+
+<template name="notifications">
+  <ul class="notification_wrapper">
+    {{#each notifications }}
+      <li>
+        <img src="img/mono_coffee_cup.png">
+        <p>You ordered a {{product_info items}} from {{store_info store_id}}</p>
+      </li>
+    {{/each}}
+  </ul>
 </template>
