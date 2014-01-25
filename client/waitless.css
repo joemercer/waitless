@@ -265,7 +265,7 @@ body .back {
   display: block;
   position: absolute;
   padding: 5px 9px;
-  border: 1px solid #efe6cf;
+  border: 1px solid rgba(239, 230, 207, 0.3);
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
@@ -284,15 +284,43 @@ body .coffee_cup {
   background: transparent url('/img/coffee_cup.png') center center no-repeat;
   background-size: contain;
   padding: 45px;
-  margin: 15px auto;
+  margin: 15px 5px;
 }
 body .dash {
   width: 100%;
   padding-top: 10px;
 }
+body .logout {
+  position: absolute;
+  display: inline-block;
+  padding: 7px 22px;
+  border: 1px solid rgba(239, 230, 207, 0.3);
+  font-size: 13px;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+  margin: 5px 3px;
+  top: 0px;
+  right: 1px;
+  font-size: 12px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  padding: 3px 0px;
+}
+body .logout:hover {
+  background: rgba(255, 255, 255, 0.09);
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
 body .profile_header {
   display: block;
-  padding-top: 20px;
+  padding-top: 50px;
   padding-left: 30px;
   padding-right: 20px;
   text-align: center;
@@ -338,7 +366,7 @@ body #login-buttons .login-buttons-with-only-one-button .login-button {
   text-shadow: none;
   border: none;
   box-shadow: none;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 12px;
   font-family: 'raleway' sans-serif;
   color: #efe6cf;
@@ -353,11 +381,11 @@ body .login_wrapper {
 }
 body .login_wrapper .login_logo {
   display: block;
-  padding: 90px 0px 40px 0px;
+  padding: 70px 0px 40px 0px;
   text-align: center;
 }
 body .login_wrapper .login_logo #logo_graphic {
-  width: 40px;
+  width: 55px;
   display: block;
   margin: 0 auto;
 }
@@ -382,9 +410,9 @@ body .login_wrapper .login_input #login_store {
   border-radius: 2px;
   font-weight: 500;
   font-size: 13px;
+  border: 1px solid rgba(239, 230, 207, 0.45);
 }
 body .login_wrapper .login_input #login_user {
-  background-color: rgba(239, 230, 207, 0.3);
   -webkit-transition: all 0.25s ease 0s;
   -moz-transition: all 0.25s ease 0s;
   -o-transition: all 0.25s ease 0s;
@@ -392,7 +420,7 @@ body .login_wrapper .login_input #login_user {
   transition: all 0.25s ease 0s;
 }
 body .login_wrapper .login_input #login_user:hover {
-  background-color: rgba(239, 230, 207, 0.45);
+  background-color: rgba(239, 230, 207, 0.05);
   -webkit-transition: all 0.25s ease 0s;
   -moz-transition: all 0.25s ease 0s;
   -o-transition: all 0.25s ease 0s;
@@ -400,7 +428,15 @@ body .login_wrapper .login_input #login_user:hover {
   transition: all 0.25s ease 0s;
 }
 body .login_wrapper .login_input #login_store {
-  background-color: #efe6cf;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+  background: rgba(239, 230, 207, 0.14);
+}
+body .login_wrapper .login_input #login_store:hover {
+  background-color: rgba(239, 230, 207, 0.65);
   -webkit-transition: all 0.25s ease 0s;
   -moz-transition: all 0.25s ease 0s;
   -o-transition: all 0.25s ease 0s;
@@ -408,17 +444,9 @@ body .login_wrapper .login_input #login_store {
   transition: all 0.25s ease 0s;
   color: #5b4d44;
 }
-body .login_wrapper .login_input #login_store:hover {
-  background-color: rgba(239, 230, 207, 0.7);
-  -webkit-transition: all 0.25s ease 0s;
-  -moz-transition: all 0.25s ease 0s;
-  -o-transition: all 0.25s ease 0s;
-  -ms-transition: all 0.25s ease 0s;
-  transition: all 0.25s ease 0s;
-}
 body .login_wrapper .login_input input {
   padding: 18px 0px;
-  background-color: rgba(239, 230, 207, 0.15);
+  background-color: rgba(239, 230, 207, 0.05);
   margin: 3px auto;
   text-align: center;
   -moz-border-radius: 2px;
@@ -426,12 +454,17 @@ body .login_wrapper .login_input input {
   border-radius: 2px;
   width: 80%;
   font-size: 13px;
-  border: 1px solid rgba(202, 202, 202, 0.25);
+  border: 1px solid rgba(202, 202, 202, 0.4);
 }
 body .login_wrapper .login_input input[type="submit"] {
   background-color: transparent;
   border: 1px solid #efe6cf;
   font-size: 14px;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  -ms-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
 }
 body .login_wrapper .login_input input[type="submit"]:hover {
   background: rgba(91, 77, 68, 0.2);
@@ -497,7 +530,7 @@ body .dashboard_wrapper .quick_brew ul {
 }
 body .dashboard_wrapper .quick_brew ul li {
   display: inline-block;
-  margin: 5px 10px;
+  margin: 5px 5px;
   -webkit-transition: all 0.7s ease 0s;
   -moz-transition: all 0.7s ease 0s;
   -o-transition: all 0.7s ease 0s;
@@ -753,26 +786,6 @@ body .profile_wrapper .profile_cc #credit_edit {
 body .profile_wrapper .profile_cc #credit_edit:hover {
   background: rgba(255, 255, 255, 0.09);
 }
-body .profile_wrapper .logout {
-  display: inline-block;
-  padding: 7px 22px;
-  border: 1px solid rgba(239, 230, 207, 0.6);
-  margin: 30px auto 0;
-  font-size: 12px;
-  -webkit-transition: all 0.25s ease 0s;
-  -moz-transition: all 0.25s ease 0s;
-  -o-transition: all 0.25s ease 0s;
-  -ms-transition: all 0.25s ease 0s;
-  transition: all 0.25s ease 0s;
-}
-body .profile_wrapper .logout:hover {
-  background: rgba(255, 255, 255, 0.09);
-  -webkit-transition: all 0.25s ease 0s;
-  -moz-transition: all 0.25s ease 0s;
-  -o-transition: all 0.25s ease 0s;
-  -ms-transition: all 0.25s ease 0s;
-  transition: all 0.25s ease 0s;
-}
 body .brewlist_wrapper {
   display: block;
   background: #474c4e url('/img/store_bg.png') center center no-repeat;
@@ -824,7 +837,7 @@ body .brewlist_wrapper ul#brewlist li {
 }
 body .brewlist_wrapper ul#brewlist li .brew_cell {
   display: table-cell;
-  padding: 9px 10px;
+  padding: 9px 8px;
   font-size: 11px;
   vertical-align: middle;
   border-bottom: 5px solid #474c4e;
