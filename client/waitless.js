@@ -1,6 +1,48 @@
 
 Session.set('partial', 'home');
 
+// # Logged Out
+// ============
+
+Template.loggedOut.helpers({
+	partial: function(partialName) {
+		return Session.get('partial') === partialName;
+	}
+});
+
+Template.loggedOut.events({
+	'click .goto-store-login': function() {
+		router.storeLoginView();
+	}
+});
+
+// # storeLogin
+// ____________
+
+Template.storeLogin.events({
+	'click .goto-home': function() {
+		router.home();
+	},
+	'click .goto-store-view': function() {
+		router.storeView();
+	}
+});
+
+// # storeView
+// _______________
+
+Template.storeView.events({
+	'click .goto-home': function() {
+		router.home();
+	}
+});
+
+// # Logged In
+// ===========
+
+
+
+
 Template.loggedIn.helpers({
 	partial: function(partialName) {
 		return Session.get('partial') === partialName;
@@ -62,16 +104,37 @@ Template.createOrder.events({
 });
 
 
+
+
+// # Store Flow
+// ============
+
+// # storeLoggedIn
+// _________________
+
+
+
+
 // # Router
 // ________
 
 var Router = Backbone.Router.extend({
   routes: {
+  	'store': 'storeLoginView',
+  	'store/:store': 'storeView',
   	'': 'homeView',
     'profile': 'profileView',
     'profile/createStore': 'createStoreView',
     'profile/createProduct': 'createProductView',
     'createOrder': 'createOrderView'
+  },
+  storeLoginView: function() {
+  	Session.set('partial', 'storeLogin');
+  	this.navigate('store', true);
+  },
+  storeView: function(storeName) {
+  	Session.set('partial', 'storeView');
+  	this.navigate('store/'+storeName, true);
   },
   home: function () {
   	Session.set('partial', 'home');
@@ -99,6 +162,8 @@ router = new Router;
 
 Meteor.startup(function () {
   Backbone.history.start({pushState: true});
+
+
 });
 
 
