@@ -94,9 +94,17 @@ Template.sizes.sizes = function() {
 };
 
 Template.times.times = function() {
-	var time_now = new Date().getTime();
-	return [time_now, time_now, time_now];
-}
+	var available_times = [];
+	var minutes = 0;
+	for (var i = 0; i < 5; i++) {
+		var time_now = new Date();
+		var time = new Date(time_now.getTime() + minutes*60000);
+
+		available_times.push(time.getHours() + ':' + time.getMinutes());
+		minutes += 5;
+	}
+	return available_times;
+};
 
 
 // # Router
