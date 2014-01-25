@@ -194,6 +194,11 @@ Template.notifications.product_info = function(p) {
 	}
 }
 
+Template.profile_pic.profile_pic = function() {
+	var dp = Meteor.user().profile.picture;
+	return dp;
+}
+
 
 // # Router
 // ________

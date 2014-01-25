@@ -64,6 +64,7 @@
     <a class="back goto-home">back</a>
     <div class="profile_header">
       <div class="profile_pic">
+        {{> profile_pic}}
       </div>
       <p>Let's get brewing started!</p>
     </div>
@@ -98,6 +99,7 @@
 <div class="dashboard_wrapper wrapper">
   <div class="goto-profile profile_header">
     <div class=" profile_pic">
+      {{> profile_pic}}
     </div>
     <p>feeling thirsty, buddy?</p>
   </div>
@@ -123,18 +125,6 @@
   </div><!-- end quick_brew -->
   <div class="user_notification">
     <img id="section_divider" src="img/dash_notif.png">
-    <!-- <ul class="notification_wrapper">
-      <li>
-        <img src="img/mono_coffee_cup.png">
-        <p>You ordered double double from SLC</br><span>5 minutes ago</span></p>
-        <div class="clearfix"></div>
-      </li>
-      <li>
-        <img src="img/mono_coffee_cup.png">
-        <p>You ordered double double from SLC</br><span>5 minutes ago</span></p>
-        <div class="clearfix"></div>
-      </li>
-    </ul><!-- end notification_wrapper -->
     {{> notifications}}
   </div>
 </div><!-- end dashboard_wrapper -->
@@ -146,6 +136,7 @@
     <a class="back goto-home">back</a>
     <div class="profile_header">
       <div class="profile_pic">
+        {{> profile_pic}}
       </div>
       <p>this is your profile</p>
     </div>
@@ -279,4 +270,9 @@
       </li>
     {{/each}}
   </ul>
+</template>
+
+
+<template name="profile_pic">
+  <img src='{{profile_pic}}'>
 </template>
