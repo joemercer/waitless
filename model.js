@@ -1,114 +1,94 @@
 ////////// Shared code (client and server) //////////
 
-Groups = new Meteor.Collection('groups');
+Stores = new Meteor.Collection('stores');
+Products = new Meteor.Collection('products');
+// Users = new Meteor.Collection('users');
+Orders = new Meteor.Collection('orders');
+
+if (Meteor.isClient) {
+  Template.stores.helpers({
+    stores: function() {
+      return Stores.find();
+    },
+    findProducts: function(store_id) {
+      var products = Products.find({store_id: store_id});
+      if (products) {
+        return products;
+      } else {
+        return ['none'];
+      }
+    }
+  })
+
+  // Template.users.helpers({
+  //   users: function() {
+  //     return Users.find();
+  //   },
+  //   findUserOrders: function(user) {
+  //     var orders = Orders.find({user_id: user});
+  //     return orders;
+  //   }
+  // })
+
+  // Template.orders.helpers({
+  //   orders: function(p) {
+  //     return Orders.find();
+  //   }, 
+  //   dateFormat: function(date) {
+  //     return new Date(date);
+  //   },
+  //   findStore: function(store_id) {
+  //     var store = Stores.findOne(store_id);
+  //     return store.name + ' - ' + store.location;
+  //   }, // the name and location of the store
+  //   findUserName: function(user_id) {
+  //     var user = Users.findOne(user_id);
+  //     if (user) {
+  //       return user.name;
+  //     }
+  //   },
+  //   getItem: function(item_array) {
+  //     var product = Products.findOne(item_array[0]);
+  //     if (product) {
+  //       return item_array[1] + ' : ' + product.item + ' - ' + product.size
+  //     }
+  //   }
+  // })
+
+}
+
 
 Meteor.methods({
-  createGroup: function (groupName) {
-    var group = Groups.findOne({groupName: groupName});
-
-    if (group) {
-      return group._id;
-    }
-    else {
-      return Groups.insert({
-        creator: this.userId,
-        createdAt: (new Date()),
-        groupName: groupName,
-        members: [this.userId]
+  createStore: function(storeName, storelocation) {
+    var store = Stores.findOne({name: storeName, location: storelocation});
+    if (store) {
+      return store._id;
+    } else {
+      return Stores.insert({
+                    name: storeName, 
+                    location: storelocation 
       });
     }
   },
-
-  joinGroup: function (groupName) {
-    var group = Groups.findOne({groupName: groupName});
-
-    if (!group) {
-      return 'group doesn\'t exist';
+  createUser: function(user_name) {
+    var user = Users.findOne({name: user_name});
+    if (user) {
+      return user._id;
+    } else {
+      return Users.insert({
+        name: user_name
+      })
     }
-
-    if (_(group.members).contains(this.userId)) {
-      return 'already in group';
-    }
-
-    return Groups.update(group, {$push: {members: this.userId}});
+  }, 
+  createOrder: function(store, pickup_time, items_req, total, user) {
+    Orders.insert({
+      store_id: store,
+      time_of_order: new Date(),
+      time_of_pickup: pickup_time,
+      status: "requesting", 
+      total_amount: total,
+      items: items_req,
+      user_id: user,
+    })
   }
-
-});
-
-Questions = new Meteor.Collection('questions');
-Answers = new Meteor.Collection('answers');
-
-Meteor.methods({
-  createQuestion: function(groupId, text, timeLimit) {
-    var question = Questions.findOne({groupId: groupId, text: text});
-
-    if (question) {
-      return question._id;
-    }
-    else {
-      return Questions.insert({
-        creator: this.userId,
-        createdAt: (new Date()),
-        groupId: groupId,
-        text: text,
-        active: false,
-        timeLimit: timeLimit
-      });
-    }
-  },
-
-  createAnswer: function(questionId, text) {
-    var answer = Answers.findOne({questionId: questionId, text: text});
-
-    if (answer) {
-      return answer._id;
-    }
-    else {
-      return Answers.insert({
-        creator: this.userId,
-        createdAt: (new Date()),
-        questionId: questionId,
-        text: text,
-        endorsers: []
-      });
-    }
-  },
-
-  createQuestionAndAnswers: function (groupId, questionText, timeLimit, answers) {
-    Meteor.call('createQuestion', groupId, questionText, timeLimit, function(error, questionId) {
-      if (error) {
-        return 'couldn\'t create the question';
-      }
-      else {
-        answers.forEach(function(answerText){
-          Meteor.call('createAnswer', questionId, answerText);
-        });
-      }
-    });
-  },
-
-  activateQuestion: function (groupId, questionId) {
-    var oldActiveQuestion = Questions.findOne({groupId: groupId, active: true});
-
-    if (oldActiveQuestion) {
-      Questions.update(oldActiveQuestion, {$set: {active: false}});
-    }
-
-    return Questions.update({_id: questionId}, {$set: {active: true}});
-  },
-
-  answerQuestion: function (answerId) {
-    var answer = Answers.findOne({_id: answerId});
-
-    if (!answer) {
-      return 'answer doesn\'t exist';
-    }
-
-    if (_(answer.endorsers).contains(this.userId)) {
-      return 'already endorsed this answer';
-    }
-
-    return Answers.update(answer, {$push: {endorsers: this.userId}});
-  }
-
-});
+})
