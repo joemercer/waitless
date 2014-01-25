@@ -41,13 +41,9 @@
   	{{> home}}
   {{else}} {{#if partial 'profile'}}
   	{{> profile}}
-  {{else}} {{#if partial 'createStore'}}
-  	{{> createStore}}
-  {{else}} {{#if partial 'createProduct'}}
-  	{{> createProduct}}
   {{else}} {{#if partial 'createOrder'}}
   	{{> createOrder}}
-  {{/if}} {{/if}} {{/if}} {{/if}} {{/if}}
+  {{/if}} {{/if}} {{/if}}
 </template>
 
 <template name="home">
@@ -58,18 +54,6 @@
 
 <template name="profile">
   <h2>Profile</h2>
-  <button class="goto-home">Go Home</button>
-  <button class="goto-create-store">Create Store</button>
-  <button class="goto-create-product">Create Product</button>
-</template>
-
-<template name="createStore">
-  <h2>Create Store</h2>
-  <button class="goto-home">Go Home</button>
-</template>
-
-<template name="createProduct">
-  <h2>Create Product</h2>
   <button class="goto-home">Go Home</button>
 </template>
 
