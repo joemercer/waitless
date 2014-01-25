@@ -101,7 +101,7 @@ body{
 		.block;
 		.absolute;
 		padding: 5px 9px;
-		border: 1px solid @eggshell;
+		border:1px solid rgba(239, 230, 207, 0.3);
 		.borderradius(2px);
 		margin: 5px 3px;
 		font-size: 13px;
@@ -114,15 +114,33 @@ body{
 		background: transparent url('/img/coffee_cup.png') center center no-repeat;
 		background-size: contain;
 		padding: 45px;
-		margin: 15px auto;
+		margin: 15px 5px;
 	}
 	.dash{
 		width: 100%;
 		padding-top: 10px;
 	}
+	.logout{
+		.absolute;
+		.inlineblock;
+		padding: 7px 22px;
+		border: 1px solid rgba(239, 230, 207, 0.3);
+		font-size: 13px;
+		.fasttransition;
+		margin: 5px 3px;
+		top: 0px;
+		right: 1px;
+		font-size: 12px;
+		.borderradius(2px);
+		padding: 3px 0px;
+	}//logout
+	.logout:hover{
+		background: rgba(255, 255, 255, 0.09);
+		.fasttransition;
+	}
 	.profile_header{
 		.block;
-		padding-top: 20px;
+		padding-top: 50px;
 		padding-left: 30px;
 		padding-right: 20px;
 		text-align: center;
@@ -168,7 +186,7 @@ body{
 		text-shadow: none;
 		border: none;
 		box-shadow: none;
-		font-size: 13px;
+		font-size: 12px;
 		line-height:12px;
 		font-family: 'raleway' sans-serif;
 		color: @eggshell;
@@ -182,10 +200,10 @@ body{
 		height: 100vh;
 		.login_logo{
 			.block;
-			padding: 90px 0px 40px 0px;
+			padding: 70px 0px 40px 0px;
 			.center;
 			#logo_graphic{
-				width: 40px;
+				width: 55px;
 				.block;
 				margin: 0 auto;
 			}//logo_title
@@ -207,39 +225,42 @@ body{
 				.borderradius(2px);
 				font-weight: 500;
 				font-size: 13px;
+				border: 1px solid rgba(239,230,207,0.45);
 			}
 			#login_user{
-				background-color: rgba(239,230,207,0.3);
+				//background-color: rgba(239,230,207,0.3);
 				.fasttransition;
+
 			}
 			#login_user:hover{
-				background-color: rgba(239,230,207,0.45);
+				background-color: rgba(239,230,207,0.05);
 				.fasttransition;
 			}
 			#login_store{
-				background-color: @eggshell;
+				.fasttransition;
+				background: rgba(239, 230, 207, 0.14);
+			}
+			#login_store:hover{
+				background-color: rgba(239,230,207,0.65);
 				.fasttransition;
 				color: @chocolate;
 			}
-			#login_store:hover{
-				background-color: rgba(239,230,207,0.7);
-				.fasttransition;
-			}
 			input {
 				padding: 18px 0px;
-				background-color: rgba(239,230,207,0.15);
+				background-color: rgba(239,230,207,0.05);
 				margin: 3px auto;
 				.center;
 				.borderradius(2px);
 				width: 80%;
 				font-size: 13px;
-				border: 1px solid rgba(202, 202, 202, 0.25);
+				border: 1px solid rgba(202, 202, 202, 0.4);
 
 			}
 			input[type="submit"]{
 				background-color: transparent;
 				border: 1px solid @eggshell;
 				font-size: 14px;
+				.transition;
 			}
 			input[type="submit"]:hover{
 				background: rgba(91, 77, 68, 0.2);
@@ -292,7 +313,7 @@ body{
 					width: 100%;
 				}
 			}//profile_pic
-		}//profile_header
+		}//p
 		.quick_brew{
 			ul{
 				.block;
@@ -300,7 +321,7 @@ body{
 				overflow-x: hidden;
 				li{
 					.inlineblock;
-					margin: 5px 10px;
+					margin: 5px 5px;
 					.transition;
 					cursor: pointer;
 					p{
@@ -534,18 +555,6 @@ body{
 				background: rgba(255, 255, 255, 0.09);
 			}
 		}//profile_cc
-		.logout{
-			.inlineblock;
-			padding: 7px 22px;
-			border: 1px solid rgba(239, 230, 207, 0.6);
-			margin: 30px auto 0;
-			font-size: 12px;
-			.fasttransition;
-		}//logout
-		.logout:hover{
-			background: rgba(255, 255, 255, 0.09);
-			.fasttransition;
-		}
 	}//profile_wrapper
 	.brewlist_wrapper{
 		.block;
@@ -587,7 +596,7 @@ body{
 				background: rgba(239, 230, 207, 0.15);
 				.brew_cell{
 					display: table-cell;
-					padding: 9px 10px;
+					padding: 9px 8px;
 					font-size: 11px;
 					vertical-align: middle;
 					border-bottom: 5px solid rgb(71, 76, 78);
