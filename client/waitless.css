@@ -723,6 +723,7 @@ body .order_wrapper #buy_confirm #brew_coffee:hover {
 }
 body .order_wrapper .buy_process {
   height: 100vh;
+  max-height: 640px;
 }
 body .order_wrapper .buy_process .buy_header {
   display: block;
@@ -928,12 +929,15 @@ body .brewlist_wrapper .brew_complete:hover {
 }
 body .wrapper {
   max-width: 400px;
-  margin-top: 70px;
+  margin-top: 40px;
   margin-bottom: 20px;
   max-height: 640px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  -webkit-box-shadow: 7px 7px 0px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 7px 7px 0px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 7px 7px 0px 0px rgba(50, 50, 50, 0.75);
 }
 @media (max-width: 400px) {
   .wrapper {
