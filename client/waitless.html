@@ -144,13 +144,25 @@
     <h4>Stores</h4>
     {{> stores}}
   </div>
+  <div id="choose_product" style="display:none">
+    <h4>Products</h4>
+    {{> products}}
+  </div>
   <button class="goto-home">Go Home</button>
 </template>
 
 <template name="stores">
   <ul id="stores_list">
     {{#each stores}}
-      <li class="select-store" data-test="{{_id}}" style="cursor: pointer">{{_id}} - {{name}} - {{location}}</li>
+      <li class="select-store" style="cursor: pointer">{{_id}} - {{name}} - {{location}}</li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="products">
+  <ul id="products_list">
+    {{#each products}}
+      <li class="select-product" style="cursor: pointer">{{_id}} - {{size}} {{item}}</li>
     {{/each}}
   </ul>
 </template>
