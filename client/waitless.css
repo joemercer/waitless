@@ -920,6 +920,9 @@ body .wrapper {
   margin-top: 70px;
   margin-bottom: 20px;
   max-height: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 @media (max-width: 400px) {
   .wrapper {
