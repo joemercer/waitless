@@ -93,8 +93,12 @@ p{
   border-radius: @radius;
 }
 
+html{
+	background: rgb(236, 236, 226);
+}
 /* BODY */
 body{
+	background: rgb(236, 236, 226);
 	.back{
 		.block;
 		.absolute;
@@ -664,4 +668,17 @@ body{
 			background: rgba(255, 255, 255, 0.09);
 		}
 	}//brewlist_wrapper
+
+	.wrapper{
+		max-width: 400px;
+		margin-top: 70px;
+		margin-bottom: 20px;
+		max-height: 640px;
+	}
 }//body
+
+@media(max-width: 400px){
+	.wrapper{
+		margin: 0px !important;
+	}
+}

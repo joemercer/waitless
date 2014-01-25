@@ -260,7 +260,13 @@ p {
   -ms-transition: all 0s ease 0s;
   transition: all 0s ease 0s;
 }
+html {
+  background: #ecece2;
+}
 /* BODY */
+body {
+  background: #ecece2;
+}
 body .back {
   display: block;
   position: absolute;
@@ -908,4 +914,15 @@ body .brewlist_wrapper .brew_complete {
 }
 body .brewlist_wrapper .brew_complete:hover {
   background: rgba(255, 255, 255, 0.09);
+}
+body .wrapper {
+  max-width: 400px;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  max-height: 640px;
+}
+@media (max-width: 400px) {
+  .wrapper {
+    margin: 0px !important;
+  }
 }
