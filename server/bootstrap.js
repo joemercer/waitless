@@ -7,6 +7,7 @@ if (Meteor.isServer) {
     var buildProducts = false;
     var buildUsers = false;
     var buildOrders = false;
+    var buildTimes = false;
     if (buildUsers) {
       var userData = [
         {
@@ -100,6 +101,8 @@ if (Meteor.isServer) {
     	for (var i=0; i < productData.length; ++i) {
     		Products.insert(productData[i]);
     	}
+    } else if (buildTimes) {
+    	
     }
 
 

@@ -215,36 +215,27 @@
         <img src="/img/small_coffee_mug.png">
         <h3>so you want...</h3>
       </div>  <!-- end buy_header -->
-      <ul>
-        <li class="active">coffee</li>
-        <li>hot chocolate</li>
-        <li>tea</li>
-        <li>iced cappuccino</li>
-      </ul>
+      {{> products}}
     </div><!-- end buy_two -->
     <div class="buy_process" id="buy_three" style="display:none">
       <div class="buy_header">
         <img src="/img/small_coffee_mug.png">
         <h3>size matters...</h3>
       </div>  <!-- end buy_header -->
-      <ul>
-        <li class="active">small 250ml</li>
-        <li>medium 400ml</li>
-        <li>large 600ml</li>
-        <li>xlarge 900ml</li>
-      </ul>
+      {{> sizes}}
     </div><!-- end buy_three -->
     <div class="buy_process" id="buy_four" style="display:none">
       <div class="buy_header">
         <img src="/img/small_coffee_mug.png">
         <h3>brew my coffee at...</h3>
       </div>  <!-- end buy_header -->
-      <ul>
+<!--       <ul>
         <li class="active">4:30 am</li>
         <li>4:35 am</li>
         <li>4:40 am</li>
         <li>4:45 am</li>
-      </ul>
+      </ul> -->
+      {{> times}}
     </div><!-- end buy_two -->
     <div class="buy_process" id="buy_confirm" style="display: none">
       <div class="confirm_item">
@@ -283,7 +274,25 @@
 <template name="products">
   <ul id="products_list">
     {{#each products}}
-      <li class="select-product" style="cursor: pointer">{{_id}} - {{size}} {{item}}</li>
+      <li class="select-product" style="cursor: pointer">{{_id}} - {{item}}</li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="sizes">
+  <ul id="product_sizes">
+    {{#each sizes}}
+      <li class="select-size" style="cursor: pointer">{{size}}</li>
+    {{/each}}
+    <li>Large</li>
+    <li>X-Large</li>
+  </ul>
+</template>
+
+<template name="times">
+  <ul id="select_time">
+    {{#each times}}
+      <li>{{.}}</li>
     {{/each}}
   </ul>
 </template>
