@@ -43,6 +43,18 @@ Meteor.startup(function () {
 			Session.set("order", order);
 
 			router.createOrderVerify();
+		},
+		'click .item_brew': function(e) {
+			var order = Session.get("order");
+			Orders.insert({
+				status: "requesting",
+				store_id: order.status_id,
+				time_of_order: new Date().getTime(),
+				time_of_pickup: order.time_of_pickup,
+				total_amount: 2.95,
+				user_id: Meteor.user()._id,
+				items: order.items
+			});
 		}
 	});
 
