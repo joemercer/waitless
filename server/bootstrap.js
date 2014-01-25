@@ -16,6 +16,10 @@ if (Meteor.isServer) {
         {
           name: "Tim Hortons",
           location: "DC"
+        },
+        {
+          name: "Starbucks",
+          location: "King and University"
         }
       ]
       for(var i=0; i < storeData.length; ++i) {
@@ -25,24 +29,66 @@ if (Meteor.isServer) {
       // Now let's add some products
       var productData = [
         {
+          item: "Coffee",
+          sizes: ["Small","Medium","Large","XLarge"],
+          store_id: Stores.findOne({
+            location: "SLC"
+          })._id
+        },
+        {
           item: "Peppermint Tea",
-          size: "Small",
+          sizes: ["Small","Medium","Large","XLarge"],
           store_id: Stores.findOne({
             location: "SLC"
           })._id
         }, 
         {
           item: "Peppermint Mocha",
-          size: "Small",
+          sizes: ["Small","Medium","Large","XLarge"],
+          store_id: Stores.findOne({
+            location: "SLC"
+          })._id
+        },
+        {
+          item: "Vanilla Latte",
+          sizes: ["Small","Medium","Large","XLarge"],
+          store_id: Stores.findOne({
+            location: "SLC"
+          })._id
+        },
+        {
+          item: "White Chocolate Frappuccino",
+          sizes: ["Small","Medium","Large","XLarge"],
           store_id: Stores.findOne({
             location: "SLC"
           })._id
         },
         {
           item: "Coffee",
-          size: "Medium",
+          sizes: ["Small","Medium","Large","XLarge"],
           store_id: Stores.findOne({
             location: "DC"
+          })._id
+        },
+        {
+          item: "Earl Gray Tea",
+          sizes: ["Small","Medium","Large","XLarge"],
+          store_id: Stores.findOne({
+            location: "DC"
+          })._id
+        },
+        {
+          item: "Chai Tea",
+          sizes: ["Small","Medium","Large","XLarge"],
+          store_id: Stores.findOne({
+            location: "DC"
+          })._id
+        },
+        {
+          item: "Orange Mocha Frappuccino!",
+          sizes: ["Small","Medium","Large","XLarge"],
+          store_id: Stores.findOne({
+            location: "King and University"
           })._id
         }
       ]
@@ -62,18 +108,26 @@ if (Meteor.isServer) {
           total_amount: 1.25,
           user_id: "FAKEUSER",
           items: [
-            [Products.findOne({
-              store_id: Stores.findOne({
-                location: "SLC"
+            {
+              product: Products.findOne({
+                store_id: Stores.findOne({
+                  location: "SLC"
+                })._id,
+                item: "Peppermint Mocha"
               })._id,
-              item: "Peppermint Mocha"
-            })._id, 2],
-            [Products.findOne({
-              store_id: Stores.findOne({
-                location: "SLC"
+              size: "Medium",
+              quantity: 2
+            },
+            {
+              product: Products.findOne({
+                store_id: Stores.findOne({
+                  location: "SLC"
+                })._id,
+                item: "Peppermint Tea"
               })._id,
-              item: "Peppermint Tea"
-            })._id, 1]
+              size: "Large",
+              quantity: 1
+            }
           ]
         },
         {
@@ -86,12 +140,16 @@ if (Meteor.isServer) {
           total_amount: 13.75,
           user_id: "FAKEUSER",
           items: [
-            [Products.findOne({
-              store_id: Stores.findOne({
-                location: "SLC"
+            {
+              product: Products.findOne({
+                store_id: Stores.findOne({
+                  location: "SLC"
+                })._id,
+                item: "Peppermint Mocha"
               })._id,
-              item: "Peppermint Mocha"
-            })._id, 3]
+              size: "Small",
+              quantity: 3
+            }
           ]
         },
         {
@@ -104,12 +162,16 @@ if (Meteor.isServer) {
           total_amount: 1.25,
           user_id: "FAKEUSER",
           items: [
-            [Products.findOne({
-              store_id: Stores.findOne({
-                location: "DC"
+            {
+              product: Products.findOne({
+                store_id: Stores.findOne({
+                  location: "DC"
+                })._id,
+                item: "Coffee"
               })._id,
-              item: "Coffee"
-            })._id,, 1]
+              size: "XLarge",
+              quantity: 1
+            }
           ]
         }
       ]

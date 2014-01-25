@@ -34,7 +34,13 @@ Meteor.startup(function () {
 		},
 		'click .select-size': function(e) {
 			var order = Session.get("order");
-			order.items = [this._id, 1];
+			order.items = [
+				{
+					product: Session.get('product').product_id,
+					size: this.toString(),
+					quantity: 1
+				}
+			];
 			Session.set("order", order);
 
 			$("#buy_four").addClass("active");
