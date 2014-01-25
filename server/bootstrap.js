@@ -107,5 +107,27 @@ if (Meteor.isServer) {
 
 
 
+    // Add all the possible time options
+    // if they haven't been added yet
+    if (Order_Times.find({}).count() === 0) {
+      var hours = ['00','01','02','03','04','05','06','07','08','09','10','11','12',
+                    '13','14','15','16','17','18','19','20','21','22','23'];
+      var minutes = ['00','05','10','15','20','25','30','35','40','45','50','55'];
+
+      var newTime;
+      for (var i=0; i<hours.length; ++i) {
+        for (var j=0; j<minutes.length; ++j) {
+          newTime = {
+            label: hours[i]+':'+minutes[j],
+            numMinutes: ((parseInt(hours[i])*60) + parseInt(minutes[j]))
+          }
+
+          Order_Times.insert(newTime);
+        }
+      }
+
+    }
+
+
   });
 }
