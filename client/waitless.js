@@ -258,6 +258,8 @@ var Router = Backbone.Router.extend({
   	$("#buy_one").addClass("active");
   	router.navigate('createOrder/store', true);
 		$("#buy_one").fadeIn();
+
+		$("#buy_two, #buy_three, #buy_four, #buy_confirm").hide();
   },
   createOrderChooseProduct: function () {
   	Session.set('partial', 'createOrder');
@@ -269,6 +271,7 @@ var Router = Backbone.Router.extend({
 			router.navigate('createOrder/product', true);
 			$("#buy_two").fadeIn();
 		});
+		$("#buy_three, #buy_four, #buy_confirm").hide();
   },
   createOrderChooseSize: function () {
   	Session.set('partial', 'createOrder');
@@ -280,6 +283,7 @@ var Router = Backbone.Router.extend({
 			router.navigate('createOrder/size', true);
 			$("#buy_three").fadeIn();
 		});
+		$("#buy_one, #buy_four, #buy_confirm").hide();
   },
   createOrderChooseTime: function () {
   	Session.set('partial', 'createOrder');
@@ -290,6 +294,7 @@ var Router = Backbone.Router.extend({
 			router.navigate('createOrder/time', true);
 			$("#buy_four").fadeIn();
 		});
+		$("#buy_one, #buy_two, #buy_confirm").hide();
   },
   createOrderVerify: function () {
   	Session.set('partial', 'createOrder');
@@ -300,6 +305,7 @@ var Router = Backbone.Router.extend({
 			router.navigate('createOrder/verify', true);
 			$("#buy_confirm").fadeIn();
 		});
+		$("#buy_one, #buy_two, #buy_three").hide();
   }
 });
 
