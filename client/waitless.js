@@ -211,7 +211,7 @@ var Router = Backbone.Router.extend({
   routes: {
   	'store': 'storeLoginView',
   	'store/:store': 'storeView',
-  	'': 'homeView',
+		'': 'home',
     'profile': 'profileView',
     'profile/createStore': 'createStoreView',
     'profile/createProduct': 'createProductView',
