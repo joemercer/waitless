@@ -1,8 +1,6 @@
 @import url('/reset.less');
 
 /* COLOR PALETTE*/
-
-
 @eggshell: #efe6cf;
 @chocolate: #5b4d44;
 @bg: #353b3d;
@@ -117,6 +115,10 @@ body{
 		background-size: contain;
 		padding: 40px;
 		margin: 15px auto;
+	}
+	.dash{
+		width: 100%;
+		padding-top: 10px;
 	}
 	#login-buttons{ 
 		.configure-button{
@@ -291,10 +293,208 @@ body{
 							font-size: 10px;
 							font-style: italic;
 						}
-					}
+					}//p
 				}//li
 			}//notification_wrapper
 		}//user_notification
-
 	}//dashboard_wrapper
+	.order_wrapper{
+		.block;
+		//background: @bg_buy_one;
+		width: 100%;
+		height: 100vh;
+		.center;
+		#buy_one{
+			background: @bg_buy_one;
+		}//buy_one
+		#buy_confirm{
+			background: #353b3d;
+			.confirm_item{
+				padding: 40px 40px 30px;
+				.coffee_cup{
+					margin-top: 0px;
+				}
+			}//confirm_item
+			.item_price{
+				.block;
+				padding: 10px;
+				background: rgba(239,230,207,0.15);
+				#coffee_graphic{
+					width: 15px;
+				}
+				#coffee_purchase{
+					height: 10px;
+				}
+				h2{
+					.block;
+					padding: 5px;
+					font-weight: 200;
+					font-size: 45px;
+					margin-top: -12px;
+				}
+			}//item_price
+			#brew_coffee{
+				width: 25%;
+				margin: 40px auto 0;
+				border: 2px solid rgba(239,230,207,0.4);
+				padding: 18px 35px;
+			}
+		}//buy_confirm
+		.buy_process{
+			height: 100vh;
+			.buy_header{
+				.block;
+				padding: 30px 0px 10px 0px;
+				width: 70%;
+				margin: 0 auto;
+				border-bottom: 1px solid rgba(239,230,207,0.15);
+				img{
+					width: 40px;
+				}
+			}//buy_header
+			ul{
+			margin: 25px auto;
+				li{
+					.block;
+					padding: 17px 0px;
+					width: 80%;
+					margin: 0 auto;
+				}//li
+				.active{
+					border: 1px solid rgba(239,230,207,0.15);
+				}//active
+			}//ul
+		}//buy_process
+	}//order_wrapper
+	.profile_wrapper{
+		.block;
+		background: @bg url('/img/dash_bg.jpg') center center no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 100vh;
+		.center;
+		.profile_header{
+			.block;
+			padding-top: 20px;
+			p{
+				width: 80%;
+				padding: 10px 0px;
+				margin: auto;
+				border-bottom: 1px solid rgba(239,230,207,0.15);
+			}
+			.profile_pic{
+				width: 75px;
+				height: 75px;
+				overflow: hidden;
+				margin: 0px auto;
+				.borderradius(50%);
+				img{
+					width: 100%;
+				}
+			}//profile_pic
+		}//profile_header
+		.coffee_edit{
+			.block;
+			width: 95%;
+			li{
+				.inlineblock;
+				width: 45%;
+				.coffee_cup,p{
+					.inlineblock;
+					width: 30%;
+					vertical-align: middle;
+					margin: 7px auto;
+				}
+				.coffee_cup{
+					padding:25px;
+				}
+				p{
+					width: 60%;
+					vertical-align: middle;
+				}
+			}//li
+		}//coffee_edit
+		
+		img#profile_stats{
+			width: 75%;
+			margin: 25px auto 5px;
+		}
+		.profile_cc{
+			p{
+				.inlineblock;
+			}
+			#credit_card{
+				padding: 15px 30px;
+				background: rgba(239,230,207,0.2);
+				margin: 15px 2px 0px 10px;
+			}
+			#credit_edit{
+				border: 1px solid rgba(239,230,207,0.6);
+				padding: 13px;
+			}
+		}//profile_cc
+		.logout{
+			.inlineblock;
+			padding: 10px 30px;
+			border: 1px solid rgba(239, 230, 207, 0.6);
+			margin: 40px auto 0;
+			font-size: 12px;
+		}//logout
+	}//profile_wrapper
+	.brewlist_wrapper{
+		.block;
+		background: @bg url('/img/dash_bg.jpg') center center no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 100vh;
+		.center;
+		.profile_header{
+			.block;
+			padding-top: 20px;
+			p{
+				width: 80%;
+				padding: 10px 0px;
+				margin: auto;
+			}//p			
+			.profile_pic{
+				width: 75px;
+				height: 75px;
+				overflow: hidden;
+				margin: 0px auto;
+				.borderradius(50%);
+				img{
+					width: 100%;
+				}//img
+			}//profile_pic
+		}//profile_header
+		ul#brewlist{
+			display:table;
+			margin: 10px auto;
+			width: 90%;
+			li{
+				display: table-row;
+				padding: 10px;
+				margin: 2px auto;
+				.borderradius(3px);
+				.brew_cell{
+					display: table-cell;
+					padding: 9px 10px;
+					background: rgba(239, 230, 207, 0.15);
+					font-size: 11px;
+					vertical-align: middle;
+					border-bottom: 5px solid @bg;
+				}//brew_cell
+				img{
+					width: 12px;
+				}
+			}//li
+		}//brewlist
+		.brew_complete{
+			.inlineblock;
+			padding: 10px 30px;
+			border: 1px solid rgba(239, 230, 207, 0.6);
+			margin: 40px auto 0;
+			font-size: 12px;
+		}
+	}//brewlist_wrapper
 }//body

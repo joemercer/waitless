@@ -60,8 +60,45 @@
 </template>
 
 <template name="storeView">
-  <h2>Store Logged In - SHOW ORDERS FOR STORE HERE</h2>
-  <button class="goto-home">Go Home</button>
+  <!-- brewlist (store view) -->
+    <div class="brewlist_wrapper wrapper">
+      <div class="back goto-home">back</div>
+      <div class="profile_header">
+        <div class="profile_pic">
+          <img src="/img/profile_pic.jpg">
+        </div>
+        <p>Let's get brewing started!</p>
+      </div>
+      <img class="dash" src="/img/dash_coming.png">
+      <ul id="brewlist">
+        <li>
+          <img class="brew_cell" src="/img/mono_coffee_cup.png">
+          <p class="brew_cell" >medium hot chocolate</p>
+          <p class="brew_cell" >nicole jiang</p>
+          <p class="brew_cell" >11:30am</p>
+        </li>
+        <li>
+          <img class="brew_cell" src="/img/mono_coffee_cup.png">
+          <p class="brew_cell" >medium hot chocolate</p>
+          <p class="brew_cell" >nicole jiang</p>
+          <p class="brew_cell" >11:30am</p>
+        </li>
+        <li>
+          <img class="brew_cell" src="/img/mono_coffee_cup.png">
+          <p class="brew_cell" >medium hot chocolate</p>
+          <p class="brew_cell" >nicole jiang</p>
+          <p class="brew_cell" >11:30am</p>
+        </li>
+        <li>
+          <img class="brew_cell" src="/img/mono_coffee_cup.png">
+          <p class="brew_cell" >medium hot chocolate</p>
+          <p class="brew_cell" >nicole jiang</p>
+          <p class="brew_cell" >11:30am</p>
+        </li>
+      </ul><!-- end brewlist -->
+
+      <div class="brew_complete">brew complete</div>
+    </div><!-- end upcoming_order_wrapper -->
 </template>
 
 <template name="loggedIn">
@@ -127,19 +164,75 @@
   </div>
 </div><!-- end dashboard_wrapper -->
 
-
   <button class="goto-create-order">Create Order</button>
 </template>
 
 <template name="profile">
-  <h2>Profile</h2>
-  
-  {{loginButtons}}
-  <button class="goto-home">Go Home</button>
+  <!-- PROFILE -->
+  <div class="profile_wrapper wrapper" style="display:block">
+    <div class="back goto-home">back</div>
+    <div class="profile_header">
+      <div class="profile_pic">
+        <img src="/img/profile_pic.jpg">
+      </div>
+      <p>oh hai there, user!</p>
+    </div>
+    <ul class="coffee_edit">
+      <li>
+        <div class="coffee_cup"></div>
+          <p>edit quick brew</p>
+      </li>
+      <li>
+        <div class="coffee_cup"></div>
+          <p>rebrew all</p>
+      </li>
+    </ul>
+    <div class="profile_history">
+      <img class="dash" src="/img/dash_hist.png">
+      <img id="profile_stats" src="/img/history.png">
+    </div>
+    <div class="profile_cc">
+      <img class="dash" src="/img/dash_cc.png">
+      <p>CCN</p>
+      <p id="credit_card">xxxxxxxxxxxxxx4347</p>
+      <p id="credit_edit">edit</p>
+    </div>
+    <div class="logout">logout{{loginButtons}}</div>
+  </div><!-- end profile_wrapper-->
 </template>
 
 <template name="createOrder">
-  <h2>Create Order</h2>
+  <!-- CREATE ORDER -->
+  <div class="order_wrapper wrapper" style="display: block">
+    <div class="goto-home back">back</div>
+    <div class="buy_process" id="buy_one" style="display:block">
+      <div class="buy_header">
+        <img src="/img/order/buy_tim.png">
+        <h3>pick up from</h3>
+      </div>  <!-- end buy_header -->
+      <ul>
+        <li class="active">Student life center</li>
+        <li>Arts Lecture Hall</li>
+        <li>South Campus Hall</li>
+        <li>Davis Center</li>
+      </ul>
+    </div><!-- end buy_one -->
+    <div class="buy_process" id="buy_confirm" style="display: none">
+      <div class="confirm_item">
+        <div class="coffee_cup"></div>
+          <p>medium - <span>Double Double</span> - SLC</p>
+      </div><!-- confirm_item -->
+      <div class="item_price">
+        <img id="coffee_graphic" src="/img/small_coffee_mug.png">
+        <h2>$2.95</h2>
+        <img id="coffee_purchase" src="/img/purchase.png">
+      </div><!-- end item_price -->
+      <div class="item_brew">
+        <img id="brew_coffee" src="/img/brew_coffee.png">
+      </div>
+
+    </div><!-- end order_confirm -->
+  </div><!-- end order_wrapper -->
   <div id="choose_store" class="active">
     <h4>Stores</h4>
     {{> stores}}
