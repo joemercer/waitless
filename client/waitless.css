@@ -568,7 +568,10 @@ body .dashboard_wrapper .quick_brew ul li:hover {
   border-radius: 8px;
 }
 body .dashboard_wrapper .quick_brew ul li:hover .coffee_cup {
-  opacity: 0.5;
+  opacity: 0.1;
+}
+body .dashboard_wrapper .quick_brew ul li:hover p#coming_soon_text {
+  opacity: 0.1;
 }
 body .dashboard_wrapper .quick_brew ul li:hover #coming_soon {
   opacity: 1;
@@ -784,10 +787,10 @@ body .profile_wrapper .coffee_edit li:hover {
   background-color: rgba(255, 255, 255, 0.09);
 }
 body .profile_wrapper .coffee_edit li:hover .coffee_cup {
-  opacity: 0.2;
+  opacity: 0.05;
 }
 body .profile_wrapper .coffee_edit li:hover p {
-  opacity: 0.2;
+  opacity: 0.05;
 }
 body .profile_wrapper .coffee_edit li:hover #coming_soon {
   opacity: 1;
@@ -879,6 +882,9 @@ body .brewlist_wrapper ul#brewlist li .brew_cell {
   font-size: 11px;
   vertical-align: middle;
   border-bottom: 5px solid #474c4e;
+}
+body .brewlist_wrapper ul#brewlist li .brew_cell:first-child {
+  padding-left: 25px;
 }
 body .brewlist_wrapper ul#brewlist li img {
   width: 12px;
