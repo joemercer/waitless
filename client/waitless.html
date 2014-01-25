@@ -13,6 +13,24 @@
 <template name="loggedOut">
   <h1>Logged Out</h1>
   {{loginButtons}}
+  <button class="goto-store-login">Login as Store</button>
+
+  {{#if partial 'storeLogin'}}
+  	{{> storeLogin}}
+  {{else}} {{#if partial 'storeView'}}
+  	{{> storeView}}
+  {{/if}} {{/if}}
+</template>
+
+<template name="storeLogin">
+  <h2>Store Login</h2>
+  <button class="goto-home">Go Home</button>
+  <button class="goto-store-view">Log into Store - Store View</button>
+</template>
+
+<template name="storeView">
+  <h2>Store Logged In - SHOW ORDERS FOR STORE HERE</h2>
+  <button class="goto-home">Go Home</button>
 </template>
 
 <template name="loggedIn">
@@ -23,13 +41,9 @@
   	{{> home}}
   {{else}} {{#if partial 'profile'}}
   	{{> profile}}
-  {{else}} {{#if partial 'createStore'}}
-  	{{> createStore}}
-  {{else}} {{#if partial 'createProduct'}}
-  	{{> createProduct}}
   {{else}} {{#if partial 'createOrder'}}
   	{{> createOrder}}
-  {{/if}} {{/if}} {{/if}} {{/if}} {{/if}}
+  {{/if}} {{/if}} {{/if}}
 </template>
 
 <template name="home">
@@ -40,18 +54,6 @@
 
 <template name="profile">
   <h2>Profile</h2>
-  <button class="goto-home">Go Home</button>
-  <button class="goto-create-store">Create Store</button>
-  <button class="goto-create-product">Create Product</button>
-</template>
-
-<template name="createStore">
-  <h2>Create Store</h2>
-  <button class="goto-home">Go Home</button>
-</template>
-
-<template name="createProduct">
-  <h2>Create Product</h2>
   <button class="goto-home">Go Home</button>
 </template>
 
