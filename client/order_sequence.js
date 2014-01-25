@@ -51,7 +51,7 @@ Meteor.startup(function () {
 		},
 		'click .select-time': function(e) {
 			var order = Session.get("order");
-			order.pickup = this.label;
+			order.time_of_pickup = this.label;
 			Session.set("order", order);
 
 			$("#buy_confirm").addClass("active");
