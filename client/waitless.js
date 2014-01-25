@@ -50,6 +50,7 @@ Template.storeView.events({
 
 Template.storeView.orders = function() {
 	var store = Session.get('loggedInStore');
+
 	return Orders.find({
 		store_id: store._id
 	});
@@ -59,7 +60,7 @@ Template.storeView.username = function(order) {
 	if (order.user_id === "FAKEUSER") {
 		return "Joe Mercer";
 	}
-	return Meter.users.findOne({
+	return Meteor.users.findOne({
 		_id: order.user_id
 	}).profile.name;
 };
@@ -227,6 +228,11 @@ var Router = Backbone.Router.extend({
   	this.navigate('store', true);
   },
   storeView: function(storeName) {
+  	var store = Session.get('loggedInStore');
+  	if (!store) {
+  		this.home();
+  		return;
+  	}
   	Session.set('partial', 'storeView');
   	this.navigate('store/'+storeName, true);
   },
