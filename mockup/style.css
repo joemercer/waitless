@@ -1,0 +1,346 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:100,200);
+@font-face {
+  font-family: 'Raleway' sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+*,
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  outline: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility: visible !important;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+textarea {
+  -webkit-resize: none !important;
+  -moz-resize: none !important;
+  -ms-resize: none !important;
+  -o-resize: none !important;
+  resize: none !important;
+}
+a,
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+input[type='text'],
+textarea {
+  cursor: text;
+}
+::selection {
+  background: #58d3e5;
+  color: #ffffff;
+}
+::-moz-selection {
+  background: #58d3e5;
+  color: #ffffff;
+}
+::-o-selection {
+  background: #58d3e5;
+  color: #ffffff;
+}
+::-ms-selection {
+  background: #58d3e5;
+  color: #ffffff;
+}
+::-webkit-selection {
+  background: #58d3e5;
+  color: #ffffff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+body,
+html {
+  background: white;
+  font-family: 'Raleway' sans-serif;
+}
+img {
+  -webkit-touch-callout: none;
+}
+/* COLOR PALETTE*/
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed !important;
+}
+.block {
+  display: block;
+}
+.center {
+  text-align: center;
+}
+.clearfix {
+  clear: both;
+}
+.inlineblock {
+  display: inline-block;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+hr {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #414141;
+  padding-bottom: 15px;
+}
+* {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  color: #efe6cf;
+}
+h1 {
+  font-size: 45px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+}
+h3 {
+  font-size: 14px;
+  font-weight: 300;
+}
+p {
+  font-size: 14px;
+  font-weight: 300;
+}
+.clearfix {
+  clear: both;
+}
+.transition {
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  -ms-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+}
+.fasttransition {
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+.notransition {
+  -webkit-transition: all 0s ease 0s;
+  -moz-transition: all 0s ease 0s;
+  -o-transition: all 0s ease 0s;
+  -ms-transition: all 0s ease 0s;
+  transition: all 0s ease 0s;
+}
+/* BODY */
+body .login_wrapper {
+  display: block;
+  margin: auto;
+  background: #353b3d url('img/login/login_bg.jpg') center center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+body .login_wrapper .login_logo {
+  display: block;
+  padding: 90px 0px 40px 0px;
+  text-align: center;
+}
+body .login_wrapper .login_logo #logo_graphic {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+}
+body .login_wrapper .login_logo #logo_title {
+  display: block;
+  width: 140px;
+  margin: 0 auto;
+  padding: 15px 0px 10px;
+}
+body .login_wrapper .login_input {
+  display: block;
+  text-align: center;
+}
+body .login_wrapper .login_input #login_user,
+body .login_wrapper .login_input #login_store {
+  display: block;
+  margin: 6px auto;
+  padding: 20px 30px;
+  width: 60%;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+body .login_wrapper .login_input #login_user {
+  background-color: rgba(239, 230, 207, 0.3);
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+body .login_wrapper .login_input #login_user:hover {
+  background-color: rgba(239, 230, 207, 0.45);
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+body .login_wrapper .login_input #login_store {
+  background-color: #efe6cf;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+  color: #5b4d44;
+}
+body .login_wrapper .login_input #login_store:hover {
+  background-color: rgba(239, 230, 207, 0.7);
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+body .login_wrapper #copyright {
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 11px;
+  width: 400px;
+  left: 50%;
+  margin-left: -200px;
+}

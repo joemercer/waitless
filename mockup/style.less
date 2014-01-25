@@ -1,0 +1,166 @@
+@import url('/reset.less');
+
+/* COLOR PALETTE*/
+
+
+@eggshell: #efe6cf;
+@chocolate: #5b4d44;
+@bg: #353b3d;
+
+.absolute{
+	position: absolute;
+}
+.fixed{
+	position: fixed !important;
+}
+.block{
+	display: block;
+}
+.center{
+	text-align: center;
+}
+.clearfix{
+	clear: both;
+}
+.inlineblock{
+	display: inline-block;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+hr{
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px solid #414141;
+	padding-bottom: 15px;
+}
+*{
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	color: @eggshell;
+}
+h1{
+	font-size: 45px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+h2{
+	font-size: 30px;
+	font-weight: 400;
+}
+h3{
+	font-size: 14px;
+	font-weight: 300;
+}
+p{
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.clearfix{
+	clear:both;
+} // clearfix
+
+.transition{
+	-webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+	-ms-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+} // transition
+
+.fasttransition{
+	-webkit-transition: all 0.25s ease 0s;
+    -moz-transition: all 0.25s ease 0s;
+    -o-transition: all 0.25s ease 0s;
+	-ms-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s;
+} // fasttransition
+
+.notransition{
+	-webkit-transition: all 0s ease 0s;
+    -moz-transition: all 0s ease 0s;
+    -o-transition: all 0s ease 0s;
+	-ms-transition: all 0s ease 0s;
+    transition: all 0s ease 0s;
+} // notransition
+
+.borderradius (@radius) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+
+
+
+/* BODY */
+body{
+	.login_wrapper{
+		.block;
+		margin: auto;
+		background: @bg url('img/login/login_bg.jpg') center center no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 100vh;
+		.login_logo{
+			.block;
+			padding: 90px 0px 40px 0px;
+			.center;
+			#logo_graphic{
+				width: 40px;
+				.block;
+				margin: 0 auto;
+			}//logo_title
+			#logo_title{
+				.block;
+				width: 140px;
+				margin: 0 auto;
+				padding: 15px 0px 10px;
+			}//logo_title
+		}//login_logo
+		.login_input{
+			.block;
+			text-align: center;
+			#login_user, #login_store{
+				.block;
+				margin: 6px auto;
+				padding: 20px 30px;
+				width: 60%;
+				.borderradius(2px);
+				font-weight: 500;
+			}
+			#login_user{
+				background-color: rgba(239,230,207,0.3);
+				.fasttransition;
+			}
+			#login_user:hover{
+				background-color: rgba(239,230,207,0.45);
+				.fasttransition;
+			}
+			#login_store{
+				background-color: @eggshell;
+				.fasttransition;
+				color: @chocolate;
+			}
+			#login_store:hover{
+				background-color: rgba(239,230,207,0.7);
+				.fasttransition;
+			}
+		}//login_input
+		#copyright{
+			.block;
+			.absolute;
+			bottom: 10px;
+			text-align: center;
+			margin: 0 auto;
+			font-size: 11px;
+			width: 400px;
+			left: 50%;
+			margin-left: -200px;
+		}
+	}//login_wrapper
+}//body
+ 
