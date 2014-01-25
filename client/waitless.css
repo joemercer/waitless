@@ -270,7 +270,7 @@ body .back {
   -webkit-border-radius: 2px;
   border-radius: 2px;
   margin: 5px 3px;
-  font-size: 14px;
+  font-size: 13px;
   -webkit-transition: all 0.7s ease 0s;
   -moz-transition: all 0.7s ease 0s;
   -o-transition: all 0.7s ease 0s;
@@ -283,12 +283,38 @@ body .back:hover {
 body .coffee_cup {
   background: transparent url('/img/coffee_cup.png') center center no-repeat;
   background-size: contain;
-  padding: 40px;
+  padding: 45px;
   margin: 15px auto;
 }
 body .dash {
   width: 100%;
   padding-top: 10px;
+}
+body .profile_header {
+  display: block;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 20px;
+  text-align: center;
+}
+body .profile_header p {
+  padding: 10px 5px;
+  display: inline-block;
+}
+body .profile_header .profile_pic {
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  margin: 0px auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -15px;
+}
+body .profile_header .profile_pic img {
+  width: 100%;
 }
 body #login-buttons .configure-button {
   background: none !important;
@@ -301,6 +327,21 @@ body #login-buttons .login-image {
 }
 body #login-buttons .text-besides-image {
   margin: 0px;
+  font-size: 12px;
+}
+body #login-buttons .login-display-name {
+  display: none;
+}
+body #login-buttons .login-buttons-with-only-one-button .login-button {
+  background: transparent;
+  content: '...';
+  text-shadow: none;
+  border: none;
+  box-shadow: none;
+  font-size: 13px;
+  line-height: 12px;
+  font-family: 'raleway' sans-serif;
+  color: #efe6cf;
 }
 body .login_wrapper {
   display: block;
@@ -334,12 +375,13 @@ body .login_wrapper .login_input #login_user,
 body .login_wrapper .login_input #login_store {
   display: block;
   margin: 6px auto;
-  padding: 20px 30px;
-  width: 60%;
+  padding: 20px 0px;
+  width: 80%;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   font-weight: 500;
+  font-size: 13px;
 }
 body .login_wrapper .login_input #login_user {
   background-color: rgba(239, 230, 207, 0.3);
@@ -383,7 +425,7 @@ body .login_wrapper .login_input input {
   -webkit-border-radius: 2px;
   border-radius: 2px;
   width: 80%;
-  font-size: 14px;
+  font-size: 13px;
   border: 1px solid rgba(202, 202, 202, 0.25);
 }
 body .login_wrapper .login_input input[type="submit"] {
@@ -401,9 +443,9 @@ body .login_wrapper #copyright {
   text-align: center;
   margin: 0 auto;
   font-size: 11px;
-  width: 400px;
+  width: 300px;
   left: 50%;
-  margin-left: -200px;
+  margin-left: -150px;
 }
 body .dashboard_wrapper {
   display: block;
@@ -419,19 +461,26 @@ body .dashboard_wrapper #section_divider {
 }
 body .dashboard_wrapper .profile_header {
   display: block;
-  padding-top: 40px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 20px;
+  text-align: center;
 }
 body .dashboard_wrapper .profile_header p {
-  padding: 10px 0px;
+  padding: 10px 5px;
+  display: inline-block;
 }
 body .dashboard_wrapper .profile_header .profile_pic {
-  width: 75px;
-  height: 75px;
+  width: 35px;
+  height: 35px;
   overflow: hidden;
   margin: 0px auto;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -15px;
 }
 body .dashboard_wrapper .profile_header .profile_pic img {
   width: 100%;
@@ -463,7 +512,7 @@ body .dashboard_wrapper .user_notification .notification_wrapper {
   padding: 17px 17px 10px 17px;
   background: rgba(239, 230, 207, 0.15);
   width: 80%;
-  margin: 25px auto;
+  margin: 22px auto;
 }
 body .dashboard_wrapper .user_notification .notification_wrapper li {
   display: block;
@@ -563,30 +612,12 @@ body .profile_wrapper {
   text-align: center;
 }
 body .profile_wrapper .profile_header {
-  display: block;
-  padding-top: 20px;
-}
-body .profile_wrapper .profile_header p {
-  width: 80%;
-  padding: 10px 0px;
-  margin: auto;
-  border-bottom: 1px solid rgba(239, 230, 207, 0.15);
-}
-body .profile_wrapper .profile_header .profile_pic {
-  width: 75px;
-  height: 75px;
-  overflow: hidden;
-  margin: 0px auto;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-body .profile_wrapper .profile_header .profile_pic img {
-  width: 100%;
+  padding-bottom: 10px;
 }
 body .profile_wrapper .coffee_edit {
   display: block;
   width: 95%;
+  margin: auto;
 }
 body .profile_wrapper .coffee_edit li {
   display: inline-block;
@@ -595,7 +626,6 @@ body .profile_wrapper .coffee_edit li {
 body .profile_wrapper .coffee_edit li .coffee_cup,
 body .profile_wrapper .coffee_edit li p {
   display: inline-block;
-  width: 30%;
   vertical-align: middle;
   margin: 7px auto;
 }
@@ -605,10 +635,11 @@ body .profile_wrapper .coffee_edit li .coffee_cup {
 body .profile_wrapper .coffee_edit li p {
   width: 60%;
   vertical-align: middle;
+  text-align: left;
 }
 body .profile_wrapper img#profile_stats {
-  width: 75%;
-  margin: 25px auto 5px;
+  width: 65%;
+  margin: 21px auto 5px;
 }
 body .profile_wrapper .profile_cc p {
   display: inline-block;
@@ -624,9 +655,9 @@ body .profile_wrapper .profile_cc #credit_edit {
 }
 body .profile_wrapper .logout {
   display: inline-block;
-  padding: 10px 30px;
+  padding: 7px 22px;
   border: 1px solid rgba(239, 230, 207, 0.6);
-  margin: 40px auto 0;
+  margin: 30px auto 0;
   font-size: 12px;
 }
 body .brewlist_wrapper {

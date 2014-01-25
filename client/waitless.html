@@ -34,7 +34,7 @@
       <h3>why wait when you can order online!</h3>
     </div><!-- end login_logo -->
     <div class="login_input">
-      <a id="login_user">{{loginButtons}}</a>
+      <a id="login_user">Thirsty?{{loginButtons}}</a>
       <a class="goto-store-login" id="login_store">you brew coffee</a>
     </div><!-- end  login_input-->
     <p id="copyright">waitless is made by nicole, bonnie, and joe</p> 
@@ -61,44 +61,45 @@
 
 <template name="storeView">
   <!-- brewlist (store view) -->
-    <div class="brewlist_wrapper wrapper">
-      <div class="back goto-home">back</div>
-      <div class="profile_header">
-        <div class="profile_pic">
-          <img src="/img/profile_pic.jpg">
-        </div>
-        <p>Let's get brewing started!</p>
-      </div>
-      <img class="dash" src="/img/dash_coming.png">
-      <ul id="brewlist">
-        <li>
-          <img class="brew_cell" src="/img/mono_coffee_cup.png">
-          <p class="brew_cell" >medium hot chocolate</p>
-          <p class="brew_cell" >nicole jiang</p>
-          <p class="brew_cell" >11:30am</p>
-        </li>
-        <li>
-          <img class="brew_cell" src="/img/mono_coffee_cup.png">
-          <p class="brew_cell" >medium hot chocolate</p>
-          <p class="brew_cell" >nicole jiang</p>
-          <p class="brew_cell" >11:30am</p>
-        </li>
-        <li>
-          <img class="brew_cell" src="/img/mono_coffee_cup.png">
-          <p class="brew_cell" >medium hot chocolate</p>
-          <p class="brew_cell" >nicole jiang</p>
-          <p class="brew_cell" >11:30am</p>
-        </li>
-        <li>
-          <img class="brew_cell" src="/img/mono_coffee_cup.png">
-          <p class="brew_cell" >medium hot chocolate</p>
-          <p class="brew_cell" >nicole jiang</p>
-          <p class="brew_cell" >11:30am</p>
-        </li>
-      </ul><!-- end brewlist -->
 
-      <div class="brew_complete">brew complete</div>
-    </div><!-- end upcoming_order_wrapper -->
+  <div class="brewlist_wrapper wrapper" style="display:block">
+    <div class="back goto-home">back</div>
+    <div class="profile_header">
+      <div class="profile_pic">
+        <img src="/img/profile_pic.jpg">
+      </div>
+      <p>Let's get brewing started!</p>
+    </div>
+    <img class="dash" src="/img/dash_coming.png">
+    <ul id="brewlist">
+      <li>
+        <img class="brew_cell" src="/img/mono_coffee_cup.png">
+        <p class="brew_cell" >medium hot chocolate</p>
+        <p class="brew_cell" >nicole jiang</p>
+        <p class="brew_cell" >11:30am</p>
+      </li>
+      <li>
+        <img class="brew_cell" src="/img/mono_coffee_cup.png">
+        <p class="brew_cell" >medium hot chocolate</p>
+        <p class="brew_cell" >nicole jiang</p>
+        <p class="brew_cell" >11:30am</p>
+      </li>
+      <li>
+        <img class="brew_cell" src="/img/mono_coffee_cup.png">
+        <p class="brew_cell" >medium hot chocolate</p>
+        <p class="brew_cell" >nicole jiang</p>
+        <p class="brew_cell" >11:30am</p>
+      </li>
+      <li>
+        <img class="brew_cell" src="/img/mono_coffee_cup.png">
+        <p class="brew_cell" >medium hot chocolate</p>
+        <p class="brew_cell" >nicole jiang</p>
+        <p class="brew_cell" >11:30am</p>
+      </li>
+    </ul><!-- end brewlist -->
+
+    <a class="brew_complete">brew complete</a>
+  </div><!-- end upcoming_order_wrapper -->
 </template>
 
 <template name="loggedIn">
@@ -115,8 +116,8 @@
 <template name="home">
 <!-- DASHBOARD -->
 <div class="dashboard_wrapper wrapper">
-  <div class="profile_header">
-    <div class="goto-profile profile_pic">
+  <div class="goto-profile profile_header">
+    <div class=" profile_pic">
       <img src="/img/profile_pic.jpg">
     </div>
     <p>Feeling thirsty, user?</p>
@@ -163,8 +164,6 @@
     </ul><!-- end notification_wrapper -->
   </div>
 </div><!-- end dashboard_wrapper -->
-
-  <button class="goto-create-order">Create Order</button>
 </template>
 
 <template name="profile">
@@ -177,17 +176,18 @@
       </div>
       <p>oh hai there, user!</p>
     </div>
+    <img class="dash" src="/img/dash_brew.png">
     <ul class="coffee_edit">
       <li>
         <div class="coffee_cup"></div>
-          <p>edit quick brew</p>
+          <p>edit </br>quick brew</p>
       </li>
       <li>
         <div class="coffee_cup"></div>
-          <p>rebrew all</p>
+          <p>rebrew </br>all drinks</p>
       </li>
     </ul>
-    <div class="profile_history">
+    <div class="profile_history" style="display:block">
       <img class="dash" src="/img/dash_hist.png">
       <img id="profile_stats" src="/img/history.png">
     </div>
@@ -197,7 +197,7 @@
       <p id="credit_card">xxxxxxxxxxxxxx4347</p>
       <p id="credit_edit">edit</p>
     </div>
-    <div class="logout">logout{{loginButtons}}</div>
+    <div class="logout">{{loginButtons}}</div>
   </div><!-- end profile_wrapper-->
 </template>
 

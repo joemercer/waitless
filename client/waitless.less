@@ -104,7 +104,7 @@ body{
 		border: 1px solid @eggshell;
 		.borderradius(2px);
 		margin: 5px 3px;
-		font-size: 14px;
+		font-size: 13px;
 		.transition;
 	}
 	.back:hover{
@@ -113,13 +113,37 @@ body{
 	.coffee_cup{
 		background: transparent url('/img/coffee_cup.png') center center no-repeat;
 		background-size: contain;
-		padding: 40px;
+		padding: 45px;
 		margin: 15px auto;
 	}
 	.dash{
 		width: 100%;
 		padding-top: 10px;
 	}
+	.profile_header{
+		.block;
+		padding-top: 20px;
+		padding-left: 30px;
+		padding-right: 20px;
+		text-align: center;
+		p{
+			padding: 10px 5px;
+			.inlineblock;
+		}
+		.profile_pic{
+			width: 35px;
+			height: 35px;
+			overflow: hidden;
+			margin: 0px auto;
+			.borderradius(50%);
+			.inlineblock;
+			vertical-align: middle;
+			margin-left: -15px;
+			img{
+				width: 100%;
+			}
+		}//profile_pic
+	}//profile_header
 	#login-buttons{ 
 		.configure-button{
 			background: none !important;
@@ -132,7 +156,22 @@ body{
 		}
 		.text-besides-image{
 			margin: 0px;
+			font-size: 12px;
 		}
+		.login-display-name{
+			display:none;
+		}
+	}//login-buttons
+	#login-buttons .login-buttons-with-only-one-button .login-button{
+		background: transparent;
+		content: '...';
+		text-shadow: none;
+		border: none;
+		box-shadow: none;
+		font-size: 13px;
+		line-height:12px;
+		font-family: 'raleway' sans-serif;
+		color: @eggshell;
 	}//login-buttons
 	.login_wrapper{
 		.block;
@@ -163,10 +202,11 @@ body{
 			#login_user, #login_store{
 				.block;
 				margin: 6px auto;
-				padding: 20px 30px;
-				width: 60%;
+				padding: 20px 0px;
+				width: 80%;
 				.borderradius(2px);
 				font-weight: 500;
+				font-size: 13px;
 			}
 			#login_user{
 				background-color: rgba(239,230,207,0.3);
@@ -192,7 +232,7 @@ body{
 				.center;
 				.borderradius(2px);
 				width: 80%;
-				font-size: 14px;
+				font-size: 13px;
 				border: 1px solid rgba(202, 202, 202, 0.25);
 
 			}
@@ -212,9 +252,9 @@ body{
 			text-align: center;
 			margin: 0 auto;
 			font-size: 11px;
-			width: 400px;
+			width: 300px;
 			left: 50%;
-			margin-left: -200px;
+			margin-left: -150px;
 		}
 	}//login_wrapper
 	.dashboard_wrapper{
@@ -230,16 +270,23 @@ body{
 		}//section_divider
 		.profile_header{
 			.block;
-			padding-top: 40px;
+			padding-top: 20px;
+			padding-left: 30px;
+			padding-right: 20px;
+			text-align: center;
 			p{
-				padding: 10px 0px;
+				padding: 10px 5px;
+				.inlineblock;
 			}
 			.profile_pic{
-				width: 75px;
-				height: 75px;
+				width: 35px;
+				height: 35px;
 				overflow: hidden;
 				margin: 0px auto;
 				.borderradius(50%);
+				.inlineblock;
+				vertical-align: middle;
+				margin-left: -15px;
 				img{
 					width: 100%;
 				}
@@ -272,7 +319,7 @@ body{
 				padding: 17px 17px 10px 17px;
 				background: rgba(239,230,207,0.15);
 				width: 80%;
-				margin: 25px auto;
+				margin: 22px auto;
 				li{
 					.block;
 					margin-bottom: 8px;
@@ -374,34 +421,17 @@ body{
 		height: 100vh;
 		.center;
 		.profile_header{
-			.block;
-			padding-top: 20px;
-			p{
-				width: 80%;
-				padding: 10px 0px;
-				margin: auto;
-				border-bottom: 1px solid rgba(239,230,207,0.15);
-			}
-			.profile_pic{
-				width: 75px;
-				height: 75px;
-				overflow: hidden;
-				margin: 0px auto;
-				.borderradius(50%);
-				img{
-					width: 100%;
-				}
-			}//profile_pic
-		}//profile_header
+			padding-bottom: 10px;
+		}
 		.coffee_edit{
 			.block;
 			width: 95%;
+			margin: auto;
 			li{
 				.inlineblock;
 				width: 45%;
 				.coffee_cup,p{
 					.inlineblock;
-					width: 30%;
 					vertical-align: middle;
 					margin: 7px auto;
 				}
@@ -411,13 +441,14 @@ body{
 				p{
 					width: 60%;
 					vertical-align: middle;
+					text-align: left;
 				}
 			}//li
 		}//coffee_edit
 		
 		img#profile_stats{
-			width: 75%;
-			margin: 25px auto 5px;
+			width: 65%;
+			margin: 21px auto 5px;
 		}
 		.profile_cc{
 			p{
@@ -435,9 +466,9 @@ body{
 		}//profile_cc
 		.logout{
 			.inlineblock;
-			padding: 10px 30px;
+			padding: 7px 22px;
 			border: 1px solid rgba(239, 230, 207, 0.6);
-			margin: 40px auto 0;
+			margin: 30px auto 0;
 			font-size: 12px;
 		}//logout
 	}//profile_wrapper
