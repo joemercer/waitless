@@ -87,6 +87,16 @@ Template.products.products = function() {
 	return Products.find({store_id: storeId});
 };
 
+Template.sizes.sizes = function() {
+	var prod_name = Session.get("product").name;
+	if (!prod_name) return;
+	return Products.find({item: prod_name});
+};
+
+Template.times.times = function() {
+	var time_now = new Date().getTime();
+	return [time_now, time_now, time_now];
+}
 
 
 // # Router

@@ -4,6 +4,7 @@ Stores = new Meteor.Collection('stores');
 Products = new Meteor.Collection('products');
 // Users = new Meteor.Collection('users');
 Orders = new Meteor.Collection('orders');
+Order_Times = new Meteor.Collection('order_times');
 
 if (Meteor.isClient) {
   Template.stores.helpers({
