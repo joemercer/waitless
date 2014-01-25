@@ -6,6 +6,7 @@
 @eggshell: #efe6cf;
 @chocolate: #5b4d44;
 @bg: #353b3d;
+@bg_buy_one: #4d6b77;
 
 .absolute{
 	position: absolute;
@@ -56,7 +57,7 @@ h3{
 	font-weight: 300;
 }
 p{
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: 300;
 }
 
@@ -110,6 +111,12 @@ body{
 	}
 	.back:hover{
 		background: rgba(91,77,68,0.3);
+	}
+	.coffee_cup{
+		background: transparent url('/img/coffee_cup.png') center center no-repeat;
+		background-size: contain;
+		padding: 40px;
+		margin: 15px auto;
 	}
 	#login-buttons{ 
 		.configure-button{
@@ -208,5 +215,86 @@ body{
 			margin-left: -200px;
 		}
 	}//login_wrapper
+	.dashboard_wrapper{
+		.block;
+		background: @bg url('/img/dash_bg.jpg') center center no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 100vh;
+		.center;
+		#section_divider{
+			width:100%;
+			margin-top: 20px;
+		}//section_divider
+		.profile_header{
+			.block;
+			padding-top: 40px;
+			p{
+				padding: 10px 0px;
+			}
+			.profile_pic{
+				width: 75px;
+				height: 75px;
+				overflow: hidden;
+				margin: 0px auto;
+				.borderradius(50%);
+				img{
+					width: 100%;
+				}
+			}//profile_pic
+		}//profile_header
+		.quick_brew{
+			ul{
+				.block;
+				width: 100%;
+				overflow-x: hidden;
+				li{
+					.inlineblock;
+					margin: 5px 10px;
+					p{
+						font-size: 12px;
+						span{
+							font-weight: 600;
+
+						}
+					}//p
+				}//li
+			}//ul
+		}//quick_brew
+		.user_notification{
+			.block;
+			margin: 10px auto;
+			.notification_wrapper{
+				.block;
+				.borderradius(2px);
+				padding: 17px 17px 10px 17px;
+				background: rgba(239,230,207,0.15);
+				width: 80%;
+				margin: 25px auto;
+				li{
+					.block;
+					margin-bottom: 8px;
+					img{
+						.inlineblock;
+						width: 15px;
+						float: left;
+						text-align: left;
+					}
+					p{
+						.inlineblock;
+						text-align: left;
+						font-size: 12px;
+						vertical-align: top;
+						width: 80%;
+						line-height: 11px;
+						span{
+							font-size: 10px;
+							font-style: italic;
+						}
+					}
+				}//li
+			}//notification_wrapper
+		}//user_notification
+
+	}//dashboard_wrapper
 }//body
- 

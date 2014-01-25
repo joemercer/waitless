@@ -34,7 +34,7 @@
       <h3>why wait when you can order online!</h3>
     </div><!-- end login_logo -->
     <div class="login_input">
-      <a id="login_user" href="">{{loginButtons}}</a>
+      <a id="login_user">{{loginButtons}}</a>
       <a class="goto-store-login" id="login_store">you brew coffee</a>
     </div><!-- end  login_input-->
     <p id="copyright">waitless is made by nicole, bonnie, and joe</p> 
@@ -65,7 +65,6 @@
 </template>
 
 <template name="loggedIn">
-  <h1>Logged In</h1>
 
   {{#if partial 'home'}}
   	{{> home}}
@@ -77,13 +76,65 @@
 </template>
 
 <template name="home">
-  <h2>HOME</h2>
+<!-- DASHBOARD -->
+<div class="dashboard_wrapper wrapper">
+  <div class="profile_header">
+    <div class="goto-profile profile_pic">
+      <img src="/img/profile_pic.jpg">
+    </div>
+    <p>Feeling thirsty, user?</p>
+  </div>
+  <div class="quick_brew">
+    <img id="section_divider" src="img/dash_quick_brew.png">
+    <ul>
+      <li>
+        <div class="coffee_cup"></div>
+        <p>medium</br>
+          <span>Double Double</span></br>
+          SLC
+        </p>
+      </li>
+      <li>
+        <div class="coffee_cup"></div>
+        <p>medium</br>
+          <span>Double Double</span></br>
+          SLC
+        </p>
+      </li>
+      <li>
+        <div class="goto-create-order coffee_cup"></div>
+        <p>make</br>
+          <span>SOMETHING</span></br>
+          FRESH
+        </p>
+      </li>
+    </ul>
+  </div><!-- end quick_brew -->
+  <div class="user_notification">
+    <img id="section_divider" src="img/dash_notif.png">
+    <ul class="notification_wrapper">
+      <li>
+        <img src="img/mono_coffee_cup.png">
+        <p>You ordered double double from SLC</br><span>5 minutes ago</span></p>
+        <div class="clearfix"></div>
+      </li>
+      <li>
+        <img src="img/mono_coffee_cup.png">
+        <p>You ordered double double from SLC</br><span>5 minutes ago</span></p>
+        <div class="clearfix"></div>
+      </li>
+    </ul><!-- end notification_wrapper -->
+  </div>
+</div><!-- end dashboard_wrapper -->
+
+
   <button class="goto-create-order">Create Order</button>
-  <button class="goto-profile">Go to profile</button>
 </template>
 
 <template name="profile">
   <h2>Profile</h2>
+  
+  {{loginButtons}}
   <button class="goto-home">Go Home</button>
 </template>
 

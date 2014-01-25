@@ -233,7 +233,7 @@ h3 {
   font-weight: 300;
 }
 p {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
 }
 .clearfix {
@@ -279,6 +279,12 @@ body .back {
 }
 body .back:hover {
   background: rgba(91, 77, 68, 0.3);
+}
+body .coffee_cup {
+  background: transparent url('/img/coffee_cup.png') center center no-repeat;
+  background-size: contain;
+  padding: 40px;
+  margin: 15px auto;
 }
 body #login-buttons .configure-button {
   background: none !important;
@@ -394,4 +400,86 @@ body .login_wrapper #copyright {
   width: 400px;
   left: 50%;
   margin-left: -200px;
+}
+body .dashboard_wrapper {
+  display: block;
+  background: #353b3d url('/img/dash_bg.jpg') center center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+body .dashboard_wrapper #section_divider {
+  width: 100%;
+  margin-top: 20px;
+}
+body .dashboard_wrapper .profile_header {
+  display: block;
+  padding-top: 40px;
+}
+body .dashboard_wrapper .profile_header p {
+  padding: 10px 0px;
+}
+body .dashboard_wrapper .profile_header .profile_pic {
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  margin: 0px auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+body .dashboard_wrapper .profile_header .profile_pic img {
+  width: 100%;
+}
+body .dashboard_wrapper .quick_brew ul {
+  display: block;
+  width: 100%;
+  overflow-x: hidden;
+}
+body .dashboard_wrapper .quick_brew ul li {
+  display: inline-block;
+  margin: 5px 10px;
+}
+body .dashboard_wrapper .quick_brew ul li p {
+  font-size: 12px;
+}
+body .dashboard_wrapper .quick_brew ul li p span {
+  font-weight: 600;
+}
+body .dashboard_wrapper .user_notification {
+  display: block;
+  margin: 10px auto;
+}
+body .dashboard_wrapper .user_notification .notification_wrapper {
+  display: block;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  padding: 17px 17px 10px 17px;
+  background: rgba(239, 230, 207, 0.15);
+  width: 80%;
+  margin: 25px auto;
+}
+body .dashboard_wrapper .user_notification .notification_wrapper li {
+  display: block;
+  margin-bottom: 8px;
+}
+body .dashboard_wrapper .user_notification .notification_wrapper li img {
+  display: inline-block;
+  width: 15px;
+  float: left;
+  text-align: left;
+}
+body .dashboard_wrapper .user_notification .notification_wrapper li p {
+  display: inline-block;
+  text-align: left;
+  font-size: 12px;
+  vertical-align: top;
+  width: 80%;
+  line-height: 11px;
+}
+body .dashboard_wrapper .user_notification .notification_wrapper li p span {
+  font-size: 10px;
+  font-style: italic;
 }
