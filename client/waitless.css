@@ -271,14 +271,14 @@ body .back {
   border-radius: 2px;
   margin: 5px 3px;
   font-size: 13px;
-  -webkit-transition: all 0.7s ease 0s;
-  -moz-transition: all 0.7s ease 0s;
-  -o-transition: all 0.7s ease 0s;
-  -ms-transition: all 0.7s ease 0s;
-  transition: all 0.7s ease 0s;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
 }
 body .back:hover {
-  background: rgba(91, 77, 68, 0.3);
+  background: rgba(255, 255, 255, 0.09);
 }
 body .coffee_cup {
   background: transparent url('/img/coffee_cup.png') center center no-repeat;
@@ -448,6 +448,11 @@ body .login_wrapper #copyright {
   margin-left: -150px;
 }
 body .dashboard_wrapper {
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  -ms-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
   display: block;
   background: #353b3d url('/img/dash_bg.jpg') center center no-repeat;
   background-size: cover;
@@ -493,12 +498,26 @@ body .dashboard_wrapper .quick_brew ul {
 body .dashboard_wrapper .quick_brew ul li {
   display: inline-block;
   margin: 5px 10px;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  -ms-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+  cursor: pointer;
 }
 body .dashboard_wrapper .quick_brew ul li p {
   font-size: 12px;
+  padding-bottom: 5px;
 }
 body .dashboard_wrapper .quick_brew ul li p span {
   font-weight: 600;
+  margin: 0px 2px;
+}
+body .dashboard_wrapper .quick_brew ul li:hover {
+  background: rgba(255, 255, 255, 0.07);
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
 }
 body .dashboard_wrapper .user_notification {
   display: block;
@@ -537,6 +556,11 @@ body .dashboard_wrapper .user_notification .notification_wrapper li p span {
   font-style: italic;
 }
 body .order_wrapper {
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  -ms-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
   display: block;
   width: 100%;
   height: 100vh;
@@ -544,6 +568,35 @@ body .order_wrapper {
 }
 body .order_wrapper #buy_one {
   background: #4d6b77;
+}
+body .order_wrapper #buy_two {
+  background: #454c4e;
+}
+body .order_wrapper #buy_two .buy_header img {
+  width: 30px;
+  margin-bottom: 10px;
+}
+body .order_wrapper #buy_three {
+  background: #4d6c6b;
+}
+body .order_wrapper #buy_three ul li:first-child {
+  background: transparent url('/img/cup_small.png') 20px center no-repeat;
+  background-size: 18px;
+}
+body .order_wrapper #buy_three ul li:nth-child(2) {
+  background: transparent url('/img/cup_medium.png') 20px center no-repeat;
+  background-size: 18px;
+}
+body .order_wrapper #buy_three ul li:nth-child(3) {
+  background: transparent url('/img/cup_large.png') 20px center no-repeat;
+  background-size: 18px;
+}
+body .order_wrapper #buy_three ul li:nth-child(4) {
+  background: transparent url('/img/cup_xlarge.png') 20px center no-repeat;
+  background-size: 18px;
+}
+body .order_wrapper #buy_four {
+  background: #4f4843;
 }
 body .order_wrapper #buy_confirm {
   background: #353b3d;
@@ -577,6 +630,15 @@ body .order_wrapper #buy_confirm #brew_coffee {
   margin: 40px auto 0;
   border: 2px solid rgba(239, 230, 207, 0.4);
   padding: 18px 35px;
+  cursor: pointer;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  -ms-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+}
+body .order_wrapper #buy_confirm #brew_coffee:hover {
+  background: rgba(255, 255, 255, 0.06);
 }
 body .order_wrapper .buy_process {
   height: 100vh;
@@ -599,11 +661,24 @@ body .order_wrapper .buy_process ul li {
   padding: 17px 0px;
   width: 80%;
   margin: 0 auto;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  -ms-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+  cursor: pointer;
+  border: 1px solid transparent;
 }
-body .order_wrapper .buy_process ul .active {
+body .order_wrapper .buy_process ul .active,
+body .order_wrapper .buy_process ul li:hover {
   border: 1px solid rgba(239, 230, 207, 0.15);
 }
 body .profile_wrapper {
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  -ms-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
   display: block;
   background: #353b3d url('/img/dash_bg.jpg') center center no-repeat;
   background-size: cover;
@@ -622,12 +697,18 @@ body .profile_wrapper .coffee_edit {
 body .profile_wrapper .coffee_edit li {
   display: inline-block;
   width: 45%;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  -ms-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+  cursor: pointer;
 }
 body .profile_wrapper .coffee_edit li .coffee_cup,
 body .profile_wrapper .coffee_edit li p {
   display: inline-block;
   vertical-align: middle;
-  margin: 7px auto;
+  margin: 7px auto 9px;
 }
 body .profile_wrapper .coffee_edit li .coffee_cup {
   padding: 25px;
@@ -636,6 +717,12 @@ body .profile_wrapper .coffee_edit li p {
   width: 60%;
   vertical-align: middle;
   text-align: left;
+}
+body .profile_wrapper .coffee_edit li:hover {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.09);
 }
 body .profile_wrapper img#profile_stats {
   width: 65%;
@@ -652,6 +739,15 @@ body .profile_wrapper .profile_cc #credit_card {
 body .profile_wrapper .profile_cc #credit_edit {
   border: 1px solid rgba(239, 230, 207, 0.6);
   padding: 13px;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+  font-size: 13px;
+}
+body .profile_wrapper .profile_cc #credit_edit:hover {
+  background: rgba(255, 255, 255, 0.09);
 }
 body .profile_wrapper .logout {
   display: inline-block;
@@ -659,6 +755,19 @@ body .profile_wrapper .logout {
   border: 1px solid rgba(239, 230, 207, 0.6);
   margin: 30px auto 0;
   font-size: 12px;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+body .profile_wrapper .logout:hover {
+  background: rgba(255, 255, 255, 0.09);
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
 }
 body .brewlist_wrapper {
   display: block;
@@ -701,11 +810,17 @@ body .brewlist_wrapper ul#brewlist li {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+  cursor: pointer;
+  background: rgba(239, 230, 207, 0.15);
 }
 body .brewlist_wrapper ul#brewlist li .brew_cell {
   display: table-cell;
   padding: 9px 10px;
-  background: rgba(239, 230, 207, 0.15);
   font-size: 11px;
   vertical-align: middle;
   border-bottom: 5px solid #353b3d;
@@ -713,10 +828,21 @@ body .brewlist_wrapper ul#brewlist li .brew_cell {
 body .brewlist_wrapper ul#brewlist li img {
   width: 12px;
 }
+body .brewlist_wrapper ul#brewlist li:hover {
+  background: rgba(239, 230, 207, 0.35);
+}
 body .brewlist_wrapper .brew_complete {
   display: inline-block;
   padding: 10px 30px;
   border: 1px solid rgba(239, 230, 207, 0.6);
   margin: 40px auto 0;
   font-size: 12px;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  -ms-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+}
+body .brewlist_wrapper .brew_complete:hover {
+  background: rgba(255, 255, 255, 0.09);
 }

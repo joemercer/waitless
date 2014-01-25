@@ -17,7 +17,7 @@ Template.loggedOut.events({
 });
 
 // # storeLogin
-// ____________
+// ____________createOrder
 
 Template.storeLogin.events({
 	'click .goto-home': function() {
@@ -75,6 +75,9 @@ Session.set('activeStore', null);
 Template.createOrder.events({
 	'click .goto-home': function() {
 		router.home();
+	},
+	'click #buy_one': function() {
+		$('#buy_one').hide();
 	}
 });
 

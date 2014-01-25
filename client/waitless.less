@@ -105,10 +105,10 @@ body{
 		.borderradius(2px);
 		margin: 5px 3px;
 		font-size: 13px;
-		.transition;
+		.fasttransition;
 	}
 	.back:hover{
-		background: rgba(91,77,68,0.3);
+		background: rgba(255, 255, 255, 0.09);
 	}
 	.coffee_cup{
 		background: transparent url('/img/coffee_cup.png') center center no-repeat;
@@ -258,6 +258,7 @@ body{
 		}
 	}//login_wrapper
 	.dashboard_wrapper{
+		.transition;
 		.block;
 		background: @bg url('/img/dash_bg.jpg') center center no-repeat;
 		background-size: cover;
@@ -300,14 +301,21 @@ body{
 				li{
 					.inlineblock;
 					margin: 5px 10px;
+					.transition;
+					cursor: pointer;
 					p{
 						font-size: 12px;
+						padding-bottom: 5px;
 						span{
 							font-weight: 600;
-
+							margin: 0px 2px;
 						}
 					}//p
 				}//li
+				li:hover{
+					background: rgba(255, 255, 255, 0.07);
+					.borderradius(8px);
+				}
 			}//ul
 		}//quick_brew
 		.user_notification{
@@ -346,6 +354,7 @@ body{
 		}//user_notification
 	}//dashboard_wrapper
 	.order_wrapper{
+		.transition;
 		.block;
 		//background: @bg_buy_one;
 		width: 100%;
@@ -354,6 +363,41 @@ body{
 		#buy_one{
 			background: @bg_buy_one;
 		}//buy_one
+		#buy_two{
+			background: #454c4e;
+			.buy_header{
+				img{
+					width: 30px;
+					margin-bottom: 10px;
+				}
+			}//buy_header
+		}//buy_two
+		#buy_three{
+			background: #4d6c6b;
+			ul{
+				li:first-child{
+					background: transparent url('/img/cup_small.png') 20px center no-repeat;
+					background-size: 18px;
+				}
+				li:nth-child(2){
+					background: transparent url('/img/cup_medium.png') 20px center no-repeat;
+					background-size: 18px;
+				}
+				li:nth-child(3){
+					background: transparent url('/img/cup_large.png') 20px center no-repeat;
+					background-size: 18px;
+					
+				}
+				li:nth-child(4){
+					background: transparent url('/img/cup_xlarge.png') 20px center no-repeat;
+					background-size: 18px;
+					
+				}
+			}//ul
+		}//buy_three
+		#buy_four{
+			background: #4f4843;
+		}
 		#buy_confirm{
 			background: #353b3d;
 			.confirm_item{
@@ -385,6 +429,11 @@ body{
 				margin: 40px auto 0;
 				border: 2px solid rgba(239,230,207,0.4);
 				padding: 18px 35px;
+				cursor: pointer;
+				.transition;
+			}
+			#brew_coffee:hover{
+				background: rgba(255, 255, 255, 0.06);
 			}
 		}//buy_confirm
 		.buy_process{
@@ -406,14 +455,18 @@ body{
 					padding: 17px 0px;
 					width: 80%;
 					margin: 0 auto;
+					.transition;
+					cursor: pointer;
+					border: 1px solid transparent;
 				}//li
-				.active{
+				.active, li:hover{
 					border: 1px solid rgba(239,230,207,0.15);
 				}//active
 			}//ul
 		}//buy_process
 	}//order_wrapper
 	.profile_wrapper{
+		.transition;
 		.block;
 		background: @bg url('/img/dash_bg.jpg') center center no-repeat;
 		background-size: cover;
@@ -430,10 +483,12 @@ body{
 			li{
 				.inlineblock;
 				width: 45%;
+				.transition;
+				cursor: pointer;
 				.coffee_cup,p{
 					.inlineblock;
 					vertical-align: middle;
-					margin: 7px auto;
+					margin: 7px auto 9px;
 				}
 				.coffee_cup{
 					padding:25px;
@@ -444,6 +499,10 @@ body{
 					text-align: left;
 				}
 			}//li
+			li:hover{
+				.borderradius(4px);
+				background-color: rgba(255, 255, 255, 0.09);
+			}
 		}//coffee_edit
 		
 		img#profile_stats{
@@ -462,6 +521,11 @@ body{
 			#credit_edit{
 				border: 1px solid rgba(239,230,207,0.6);
 				padding: 13px;
+				.fasttransition;
+				font-size: 13px;
+			}
+			#credit_edit:hover{
+				background: rgba(255, 255, 255, 0.09);
 			}
 		}//profile_cc
 		.logout{
@@ -470,7 +534,12 @@ body{
 			border: 1px solid rgba(239, 230, 207, 0.6);
 			margin: 30px auto 0;
 			font-size: 12px;
+			.fasttransition;
 		}//logout
+		.logout:hover{
+			background: rgba(255, 255, 255, 0.09);
+			.fasttransition;
+		}
 	}//profile_wrapper
 	.brewlist_wrapper{
 		.block;
@@ -507,10 +576,12 @@ body{
 				padding: 10px;
 				margin: 2px auto;
 				.borderradius(3px);
+				.fasttransition;
+				cursor: pointer;
+				background: rgba(239, 230, 207, 0.15);
 				.brew_cell{
 					display: table-cell;
 					padding: 9px 10px;
-					background: rgba(239, 230, 207, 0.15);
 					font-size: 11px;
 					vertical-align: middle;
 					border-bottom: 5px solid @bg;
@@ -519,6 +590,9 @@ body{
 					width: 12px;
 				}
 			}//li
+			li:hover{
+				background: rgba(239, 230, 207, 0.35);
+			}
 		}//brewlist
 		.brew_complete{
 			.inlineblock;
@@ -526,6 +600,10 @@ body{
 			border: 1px solid rgba(239, 230, 207, 0.6);
 			margin: 40px auto 0;
 			font-size: 12px;
+			.transition;
+		}
+		.brew_complete:hover{
+			background: rgba(255, 255, 255, 0.09);
 		}
 	}//brewlist_wrapper
 }//body

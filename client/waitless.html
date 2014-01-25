@@ -16,8 +16,6 @@
   {{/if}}
 </body>
 
-
-
 <template name="loggedOut">
   {{#if partial 'storeLogin'}}
   	{{> storeLogin}}
@@ -39,7 +37,7 @@
       <a id="login_user">Thirsty?{{loginButtons}}</a>
       <a class="goto-store-login" id="login_store">you brew coffee</a>
     </div><!-- end  login_input-->
-    <p id="copyright">waitless is made by nicole, bonnie, and joe</p> 
+    <p id="copyright">waitless is made by nicole, bonnie, and joe</p>
   </div><!-- end login_wrapper -->
 </template>
 
@@ -51,13 +49,12 @@
       <img id="logo_title" src="img/login/logo_title.png">
       <h3>you are a store - login</h3>
     </div><!-- end login_logo -->
-
     <div class="login_input">
       <input type="text" placeholder="username">
       <input type="password" placeholder="password">
       <input type="submit" class="goto-store-view" value="login">
     </div><!-- end  login_input-->
-    <p id="copyright">waitless is made by nicole, bonnie, and joe</p> 
+    <p id="copyright">waitless is made by nicole, bonnie, and joe</p>
   </div><!-- end login_wrapper -->
 </template>
 
@@ -65,14 +62,14 @@
   <!-- brewlist (store view) -->
 
   <div class="brewlist_wrapper wrapper" style="display:block">
-    <div class="back goto-home">back</div>
+    <a class="back goto-home">back</a>
     <div class="profile_header">
       <div class="profile_pic">
         <img src="/img/profile_pic.jpg">
       </div>
       <p>Let's get brewing started!</p>
     </div>
-    <img class="dash" src="/img/dash_coming.png">
+    <img class="dash" src="/img/dash_coming.png">value="audi">Audi</option>
     <ul id="brewlist">
       <li>
         <img class="brew_cell" src="/img/mono_coffee_cup.png">
@@ -105,7 +102,6 @@
 </template>
 
 <template name="loggedIn">
-
   {{#if partial 'home'}}
   	{{> home}}
   {{else}} {{#if partial 'profile'}}
@@ -171,12 +167,12 @@
 <template name="profile">
   <!-- PROFILE -->
   <div class="profile_wrapper wrapper" style="display:block">
-    <div class="back goto-home">back</div>
+    <a class="back goto-home">back</a>
     <div class="profile_header">
       <div class="profile_pic">
         <img src="/img/profile_pic.jpg">
       </div>
-      <p>oh hai there, user!</p>
+      <p>your profile</p>
     </div>
     <img class="dash" src="/img/dash_brew.png">
     <ul class="coffee_edit">
@@ -197,7 +193,7 @@
       <img class="dash" src="/img/dash_cc.png">
       <p>CCN</p>
       <p id="credit_card">xxxxxxxxxxxxxx4347</p>
-      <p id="credit_edit">edit</p>
+      <a id="credit_edit">edit</a>
     </div>
     <div class="logout">{{loginButtons}}</div>
   </div><!-- end profile_wrapper-->
@@ -206,7 +202,7 @@
 <template name="createOrder">
   <!-- CREATE ORDER -->
   <div class="order_wrapper wrapper" style="display: block">
-    <div class="goto-home back">back</div>
+    <a class="goto-home back">back</a>
     <div class="buy_process" id="buy_one" style="display:block">
       <div class="buy_header">
         <img src="/img/order/buy_tim.png">
@@ -219,6 +215,42 @@
         <li>Davis Center</li>
       </ul>
     </div><!-- end buy_one -->
+    <div class="buy_process" id="buy_two" style="display:none">
+      <div class="buy_header">
+        <img src="/img/small_coffee_mug.png">
+        <h3>so you want...</h3>
+      </div>  <!-- end buy_header -->
+      <ul>
+        <li class="active">coffee</li>
+        <li>hot chocolate</li>
+        <li>tea</li>
+        <li>iced cappuccino</li>
+      </ul>
+    </div><!-- end buy_two -->
+    <div class="buy_process" id="buy_three" style="display:none">
+      <div class="buy_header">
+        <img src="/img/small_coffee_mug.png">
+        <h3>size matters...</h3>
+      </div>  <!-- end buy_header -->
+      <ul>
+        <li class="active">small 250ml</li>
+        <li>medium 400ml</li>
+        <li>large 600ml</li>
+        <li>xlarge 900ml</li>
+      </ul>
+    </div><!-- end buy_three -->
+    <div class="buy_process" id="buy_four" style="display:none">
+      <div class="buy_header">
+        <img src="/img/small_coffee_mug.png">
+        <h3>brew my coffee at...</h3>
+      </div>  <!-- end buy_header -->
+      <ul>
+        <li class="active">4:30 am</li>
+        <li>4:35 am</li>
+        <li>4:40 am</li>
+        <li>4:45 am</li>
+      </ul>
+    </div><!-- end buy_two -->
     <div class="buy_process" id="buy_confirm" style="display: none">
       <div class="confirm_item">
         <div class="coffee_cup"></div>
@@ -232,7 +264,6 @@
       <div class="item_brew">
         <img id="brew_coffee" src="/img/brew_coffee.png">
       </div>
-
     </div><!-- end order_confirm -->
   </div><!-- end order_wrapper -->
   <div id="choose_store" class="active">
