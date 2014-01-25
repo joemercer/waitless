@@ -94,19 +94,11 @@ Template.sizes.sizes = function() {
 };
 
 Template.times.times = function() {
-	var available_times = [];
 	var minutes = 0;
-	for (var i = 0; i < 5; i++) {
-		var time_now = new Date();
-		var minutes_now = (time_now.getHours() * 60) + time_now.getMinutes() + minutes;
-		var closest_time = 5 * Math.round(minutes_now/5);
-		var next_time = Order_Times.findOne({numMinutes: closest_time})
-
-		if(next_time) {
-			available_times.push(next_time.label);
-		}
-		minutes += 5;
-	}
+	var time_now = new Date();
+	var minutes_now = (time_now.getHours() * 60) + time_now.getMinutes() + minutes;
+	var closest_time = 5 * Math.round(minutes_now/5);
+	var available_times = Order_Times.find({numMinutes: {$gt : closest_time}}, {limit: 5})
 	return available_times;
 };
 

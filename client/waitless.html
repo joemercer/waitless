@@ -229,12 +229,6 @@
         <img src="/img/small_coffee_mug.png">
         <h3>brew my coffee at...</h3>
       </div>  <!-- end buy_header -->
-<!--       <ul>
-        <li class="active">4:30 am</li>
-        <li>4:35 am</li>
-        <li>4:40 am</li>
-        <li>4:45 am</li>
-      </ul> -->
       {{> times}}
     </div><!-- end buy_two -->
     <div class="buy_process" id="buy_confirm" style="display: none">
@@ -290,9 +284,9 @@
 </template>
 
 <template name="times">
-  <ul id="select_time">
+  <ul id="times">
     {{#each times}}
-      <li>{{.}}</li>
+      <li class="select-time">{{label}}</li>
     {{/each}}
   </ul>
 </template>

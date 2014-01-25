@@ -42,6 +42,17 @@ Meteor.startup(function () {
 				$(this).removeClass("active");
 				$("#buy_four").fadeIn();
 			})
+		},
+		'click .select-time': function(e) {
+			var order = Session.get("order");
+			order.pickup = this.label;
+			Session.set("order", order);
+
+			$("#buy_confirm").addClass("active");
+			$("#buy_four").fadeOut( function() {
+				$(this).removeClass("active");
+				$("#buy_confirm").fadeIn();
+			})
 		}
 	});
 
