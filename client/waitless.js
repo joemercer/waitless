@@ -60,9 +60,13 @@ Template.storeView.username = function(order) {
 	if (order.user_id === "FAKEUSER") {
 		return "Joe Mercer";
 	}
-	return Meteor.users.findOne({
+	var user = Meteor.users.findOne({
 		_id: order.user_id
-	}).profile.name;
+	});
+
+	if (!user) return 'Suzy Q';
+
+	return user.profile.name;
 };
 
 Template.storeView.itemName = function(order) {
