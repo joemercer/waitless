@@ -124,7 +124,12 @@ var Router = Backbone.Router.extend({
     'profile': 'profileView',
     'profile/createStore': 'createStoreView',
     'profile/createProduct': 'createProductView',
-    'createOrder': 'createOrderView'
+    'createOrder': 'createOrderView',
+    'createOrder/store': 'createOrderChooseStore',
+    'createOrder/product': 'createOrderChooseProduct',
+    'createOrder/size': 'createOrderChooseSize',
+    'createOrder/time': 'createOrderChooseTime',
+    'createOrder/verify': 'createOrderChooseVerify'
   },
   storeLoginView: function() {
   	Session.set('partial', 'storeLogin');
@@ -144,7 +149,57 @@ var Router = Backbone.Router.extend({
   },
   createOrderView: function () {
   	Session.set('partial', 'createOrder');
-  	this.navigate('createOrder', true);
+
+  	this.createOrderChooseStore();
+  },
+  createOrderChooseStore: function () {
+  	Session.set('partial', 'createOrder');
+
+  	$("#buy_one").addClass("active");
+  	router.navigate('createOrder/store', true);
+		$("#buy_one").fadeIn();
+  },
+  createOrderChooseProduct: function () {
+  	Session.set('partial', 'createOrder');
+
+  	// change the view
+  	$("#buy_two").addClass("active");
+		$("#buy_one").fadeOut( function() {
+			$(this).removeClass("active");
+			router.navigate('createOrder/product', true);
+			$("#buy_two").fadeIn();
+		});
+  },
+  createOrderChooseSize: function () {
+  	Session.set('partial', 'createOrder');
+
+  	// change the view
+  	$("#buy_three").addClass("active");
+		$("#buy_two").fadeOut( function() {
+			$(this).removeClass("active");
+			router.navigate('createOrder/size', true);
+			$("#buy_three").fadeIn();
+		});
+  },
+  createOrderChooseTime: function () {
+  	Session.set('partial', 'createOrder');
+
+  	$("#buy_four").addClass("active");
+		$("#buy_three").fadeOut( function() {
+			$(this).removeClass("active");
+			router.navigate('createOrder/time', true);
+			$("#buy_four").fadeIn();
+		});
+  },
+  createOrderVerify: function () {
+  	Session.set('partial', 'createOrder');
+
+  	$("#buy_confirm").addClass("active");
+		$("#buy_four").fadeOut( function() {
+			$(this).removeClass("active");
+			router.navigate('createOrder/verify', true);
+			$("#buy_confirm").fadeIn();
+		});
   }
 });
 

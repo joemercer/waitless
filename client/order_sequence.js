@@ -11,11 +11,7 @@ Meteor.startup(function () {
 
 			Session.set('activeStore', this._id);
 
-			$("#buy_two").addClass("active");
-			$("#buy_one").fadeOut( function() {
-				$(this).removeClass("active");
-				$("#buy_two").fadeIn();
-			});
+			router.createOrderChooseProduct();
 		},
 		'click .select-product': function(e) {
 			// var order = Session.get("order");
@@ -26,11 +22,7 @@ Meteor.startup(function () {
 			product.product_id = this._id;
 			Session.set("product", product);
 
-			$("#buy_three").addClass("active");
-			$("#buy_two").fadeOut( function() {
-				$(this).removeClass("active");
-				$("#buy_three").fadeIn();
-			})
+			router.createOrderChooseSize();
 		},
 		'click .select-size': function(e) {
 			var order = Session.get("order");
@@ -43,22 +35,14 @@ Meteor.startup(function () {
 			];
 			Session.set("order", order);
 
-			$("#buy_four").addClass("active");
-			$("#buy_three").fadeOut( function() {
-				$(this).removeClass("active");
-				$("#buy_four").fadeIn();
-			})
+			router.createOrderChooseTime();
 		},
 		'click .select-time': function(e) {
 			var order = Session.get("order");
 			order.pickup = this.label;
 			Session.set("order", order);
 
-			$("#buy_confirm").addClass("active");
-			$("#buy_four").fadeOut( function() {
-				$(this).removeClass("active");
-				$("#buy_confirm").fadeIn();
-			})
+			router.createOrderVerify();
 		}
 	});
 
