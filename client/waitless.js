@@ -87,11 +87,21 @@ Template.products.products = function() {
 	return Products.find({store_id: storeId});
 };
 
+// # sizes
+// _______
+
 Template.sizes.sizes = function() {
-	var prod_name = Session.get("product").name;
-	if (!prod_name) return;
-	return Products.find({item: prod_name});
+	var prod_id = Session.get("product").product_id;
+	if (!prod_id) return;
+	var product = Products.findOne({
+		_id: prod_id
+	});
+	if (!product) return;
+	return product.sizes;
 };
+
+// # times
+// _______
 
 Template.times.times = function() {
 	var available_times = [];
