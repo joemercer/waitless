@@ -87,28 +87,46 @@ Template.products.products = function() {
 	return Products.find({store_id: storeId});
 };
 
+// # sizes
+// _______
+
 Template.sizes.sizes = function() {
-	var prod_name = Session.get("product").name;
-	if (!prod_name) return;
-	return Products.find({item: prod_name});
+	var prod_id = Session.get("product").product_id;
+	if (!prod_id) return;
+	var product = Products.findOne({
+		_id: prod_id
+	});
+	if (!product) return;
+	return product.sizes;
 };
+
+// # times
+// _______
 
 Template.times.times = function() {
-	var available_times = [];
 	var minutes = 0;
-	for (var i = 0; i < 5; i++) {
-		var time_now = new Date();
-		var minutes_now = (time_now.getHours() * 60) + time_now.getMinutes() + minutes;
-		var closest_time = 5 * Math.round(minutes_now/5);
-		var next_time = Order_Times.findOne({numMinutes: closest_time})
-
-		if(next_time) {
-			available_times.push(next_time.label);
-		}
-		minutes += 5;
-	}
+	var time_now = new Date();
+	var minutes_now = (time_now.getHours() * 60) + time_now.getMinutes() + minutes;
+	var closest_time = 5 * Math.round(minutes_now/5);
+	var available_times = Order_Times.find({numMinutes: {$gt : closest_time}}, {limit: 5})
 	return available_times;
 };
+
+// # confirmation
+Template.confirmation.confirmation = function() {
+	var order = Session.get("order");
+	var store = Stores.findOne(order.store_id);
+	if (store) {
+		if (order.items) {
+			var item = Products.findOne(order.items[0].product);
+			if (order.time_of_pickup) {
+				return store.name + ' - ' + store.location + ' : ' + order.items[0].size + ' ' + item.item + ' at time ' + order.time_of_pickup;
+			}
+			return store.name + ' - ' + store.location + ' : ' + order.items[0].size + ' ' + item.item;
+		}
+		return store.name + ' - ' + store.location;
+	}
+}
 
 
 // # Router
@@ -122,7 +140,12 @@ var Router = Backbone.Router.extend({
     'profile': 'profileView',
     'profile/createStore': 'createStoreView',
     'profile/createProduct': 'createProductView',
-    'createOrder': 'createOrderView'
+    'createOrder': 'createOrderView',
+    'createOrder/store': 'createOrderChooseStore',
+    'createOrder/product': 'createOrderChooseProduct',
+    'createOrder/size': 'createOrderChooseSize',
+    'createOrder/time': 'createOrderChooseTime',
+    'createOrder/verify': 'createOrderChooseVerify'
   },
   storeLoginView: function() {
   	Session.set('partial', 'storeLogin');
@@ -142,7 +165,57 @@ var Router = Backbone.Router.extend({
   },
   createOrderView: function () {
   	Session.set('partial', 'createOrder');
-  	this.navigate('createOrder', true);
+
+  	this.createOrderChooseStore();
+  },
+  createOrderChooseStore: function () {
+  	Session.set('partial', 'createOrder');
+
+  	$("#buy_one").addClass("active");
+  	router.navigate('createOrder/store', true);
+		$("#buy_one").fadeIn();
+  },
+  createOrderChooseProduct: function () {
+  	Session.set('partial', 'createOrder');
+
+  	// change the view
+  	$("#buy_two").addClass("active");
+		$("#buy_one").fadeOut( function() {
+			$(this).removeClass("active");
+			router.navigate('createOrder/product', true);
+			$("#buy_two").fadeIn();
+		});
+  },
+  createOrderChooseSize: function () {
+  	Session.set('partial', 'createOrder');
+
+  	// change the view
+  	$("#buy_three").addClass("active");
+		$("#buy_two").fadeOut( function() {
+			$(this).removeClass("active");
+			router.navigate('createOrder/size', true);
+			$("#buy_three").fadeIn();
+		});
+  },
+  createOrderChooseTime: function () {
+  	Session.set('partial', 'createOrder');
+
+  	$("#buy_four").addClass("active");
+		$("#buy_three").fadeOut( function() {
+			$(this).removeClass("active");
+			router.navigate('createOrder/time', true);
+			$("#buy_four").fadeIn();
+		});
+  },
+  createOrderVerify: function () {
+  	Session.set('partial', 'createOrder');
+
+  	$("#buy_confirm").addClass("active");
+		$("#buy_four").fadeOut( function() {
+			$(this).removeClass("active");
+			router.navigate('createOrder/verify', true);
+			$("#buy_confirm").fadeIn();
+		});
   }
 });
 
