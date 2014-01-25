@@ -19,12 +19,23 @@ Template.loggedOut.events({
 // # storeLogin
 // ____________createOrder
 
+Session.set('loggedInStore', null);
+
 Template.storeLogin.events({
 	'click .goto-home': function() {
 		router.home();
 	},
-	'click .goto-store-view': function() {
-		router.storeView('fakeStoreName');
+	'click .goto-store-view': function(e) {
+		var username = $('#store_username').val();
+		var store = Stores.findOne({
+			username: username
+		});
+
+		if (!store) return;
+
+		Session.set('loggedInStore', store);
+
+		router.storeView(store.name);
 	}
 });
 
@@ -36,6 +47,39 @@ Template.storeView.events({
 		router.home();
 	}
 });
+
+Template.storeView.orders = function() {
+	var store = Session.get('loggedInStore');
+	return Orders.find({
+		store_id: store._id
+	});
+};
+
+Template.storeView.username = function(order) {
+	if (order.user_id === "FAKEUSER") {
+		return "Joe Mercer";
+	}
+	return Meter.users.findOne({
+		_id: order.user_id
+	}).profile.name;
+};
+
+Template.storeView.itemName = function(order) {
+	var item_id = order.items[0].product;
+	if (!item_id) return;
+
+	var product = Products.findOne({
+		_id: item_id
+	});
+
+	if (!product) return;
+
+	return order.items[0].size + ' ' + product.item;
+};
+
+Template.storeView.pickupTime = function(order) {
+	return order.time_of_pickup;
+};
 
 // # Logged In
 // ===========

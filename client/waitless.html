@@ -50,7 +50,7 @@
       <h3>you are a store - login</h3>
     </div><!-- end login_logo -->
     <div class="login_input">
-      <input type="text" placeholder="username">
+      <input id="store_username" type="text" placeholder="username">
       <input type="password" placeholder="password">
       <input type="submit" class="goto-store-view" value="login">
     </div><!-- end  login_input-->
@@ -70,30 +70,14 @@
     </div>
     <img class="dash" src="/img/dash_coming.png">
     <ul id="brewlist">
-      <li>
-        <img class="brew_cell" src="/img/mono_coffee_cup.png">
-        <p class="brew_cell" >medium hot chocolate</p>
-        <p class="brew_cell" >nicole jiang</p>
-        <p class="brew_cell" >11:30am</p>
-      </li>
-      <li>
-        <img class="brew_cell" src="/img/mono_coffee_cup.png">
-        <p class="brew_cell" >medium hot chocolate</p>
-        <p class="brew_cell" >nicole jiang</p>
-        <p class="brew_cell" >11:30am</p>
-      </li>
-      <li>
-        <img class="brew_cell" src="/img/mono_coffee_cup.png">
-        <p class="brew_cell" >medium hot chocolate</p>
-        <p class="brew_cell" >nicole jiang</p>
-        <p class="brew_cell" >11:30am</p>
-      </li>
-      <li>
-        <img class="brew_cell" src="/img/mono_coffee_cup.png">
-        <p class="brew_cell" >medium hot chocolate</p>
-        <p class="brew_cell" >nicole jiang</p>
-        <p class="brew_cell" >11:30am</p>
-      </li>
+			{{#each orders}}
+				<li>
+					<img class="brew_cell" src="/img/mono_coffee_cup.png">
+					<p class="brew_cell" >{{itemName this}}</p>
+					<p class="brew_cell" >{{username this}}</p>
+					<p class="brew_cell" >{{pickupTime this}}</p>
+				</li>
+			{{/each}}
     </ul><!-- end brewlist -->
 
     <a class="brew_complete">brew complete</a>
