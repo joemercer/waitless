@@ -93,8 +93,6 @@ p{
   border-radius: @radius;
 }
 
-
-
 /* BODY */
 body{
 	.back{
@@ -115,6 +113,21 @@ body{
 		background-size: contain;
 		padding: 45px;
 		margin: 15px 5px;
+	}
+	.coffee_cup_new{
+		background: transparent url('/img/coffee_cup_new.png') center center no-repeat;
+		background-size: contain;
+		padding: 45px;
+		margin: 15px 5px;
+	}
+	#coming_soon{
+		opacity: 0;
+		padding: 8px 12px;
+		color: @eggshell;
+		position: absolute;
+		border-radius: 2px;
+		z-index: 10;
+		font-weight: 700;
 	}
 	.dash{
 		width: 100%;
@@ -194,13 +207,13 @@ body{
 	.login_wrapper{
 		.block;
 		margin: auto;
-		background: @bg url('/img/login/login_bg.jpg') center center no-repeat;
+		background: @bg url('img/login/login_bg.jpg') center center no-repeat;
 		background-size: cover;
 		width: 100%;
 		height: 100vh;
 		.login_logo{
 			.block;
-			padding: 70px 0px 40px 0px;
+			padding: 70px 0px 20px 0px;
 			.center;
 			#logo_graphic{
 				width: 55px;
@@ -322,7 +335,7 @@ body{
 				li{
 					.inlineblock;
 					margin: 5px 5px;
-					.transition;
+					.fasttransition;
 					cursor: pointer;
 					p{
 						font-size: 12px;
@@ -336,6 +349,16 @@ body{
 				li:hover{
 					background: rgba(255, 255, 255, 0.07);
 					.borderradius(8px);
+					.coffee_cup{
+						opacity: 0.1;
+					}
+					p#coming_soon_text{
+						opacity: 0.1;
+					}
+					#coming_soon{
+						opacity: 1;
+						margin-top: 59px;
+					}
 				}
 			}//ul
 		}//quick_brew
@@ -529,7 +552,18 @@ body{
 			li:hover{
 				.borderradius(4px);
 				background-color: rgba(255, 255, 255, 0.09);
-			}
+				.coffee_cup{
+					opacity: 0.05;
+				}
+				p{
+					opacity: 0.05;
+				}
+				#coming_soon{
+					opacity: 1;
+					margin-top: 21px;
+					margin-left: 22px;
+				}
+			}//li
 		}//coffee_edit
 		
 		img#profile_stats{
@@ -572,6 +606,7 @@ body{
 				margin: auto;
 			}//p			
 			.profile_pic{
+				.block;
 				width: 75px;
 				height: 75px;
 				overflow: hidden;
@@ -594,6 +629,10 @@ body{
 				.fasttransition;
 				cursor: pointer;
 				background: rgba(239, 230, 207, 0.15);
+				p:first-child{
+					background: transparent url('/img/mono_coffee_cup.png') 10px center no-repeat;
+					background-size: 13px;
+				}
 				.brew_cell{
 					display: table-cell;
 					padding: 9px 8px;
@@ -601,6 +640,9 @@ body{
 					vertical-align: middle;
 					border-bottom: 5px solid rgb(71, 76, 78);
 				}//brew_cell
+				.brew_cell:first-child{
+					padding-left: 25px;
+				}
 				img{
 					width: 12px;
 				}

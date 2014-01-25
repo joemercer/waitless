@@ -172,6 +172,27 @@ Template.confirmation.confirmation = function() {
 	}
 }
 
+// # notifications
+Template.notifications.notifications = function() {
+	var user = Meteor.user()._id;
+	var orders = Orders.find({user_id: user});
+	return orders;
+}
+
+Template.notifications.store_info = function(s) {
+	var store = Stores.findOne(s);
+	if (store) {
+		return store.name + ' - ' + store.location;
+	}
+}
+
+Template.notifications.product_info = function(p) {
+	var product = Products.findOne(p[0].product);
+	if (product) {
+		return p[0].size + ' ' + product.item;
+	}
+}
+
 
 // # Router
 // ________
