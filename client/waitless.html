@@ -212,12 +212,7 @@
         <img src="/img/order/buy_tim.png">
         <h3>pick up from</h3>
       </div>  <!-- end buy_header -->
-      <ul>
-        <li class="active">Student life center</li>
-        <li>Arts Lecture Hall</li>
-        <li>South Campus Hall</li>
-        <li>Davis Center</li>
-      </ul>
+      {{> stores}}
     </div><!-- end buy_one -->
     <div class="buy_process" id="buy_confirm" style="display: none">
       <div class="confirm_item">
@@ -249,7 +244,7 @@
 <template name="stores">
   <ul id="stores_list">
     {{#each stores}}
-      <li class="select-store" style="cursor: pointer">{{_id}} - {{name}} - {{location}}</li>
+      <li class="select-store" style="cursor: pointer">{{name}} - {{location}}</li>
     {{/each}}
   </ul>
 </template>

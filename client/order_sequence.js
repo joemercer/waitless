@@ -5,15 +5,17 @@ Meteor.startup(function () {
 	Template.createOrder.events({
 		'click .select-store': function(e) {
 			var order = Session.get("order");
+
+			console.log(this._id);
 			order.store_id = this._id;
 			Session.set("order", order);
 
 			Session.set('activeStore', this._id);
 
-			$("#choose_product").addClass("active");
-			$("#choose_store").fadeOut( function() {
+			// $("#choose_product").addClass("active");
+			$("#buy_one").fadeOut( function() {
 				$(this).removeClass("active");
-				$("#choose_product").fadeIn();
+				$("#buy_confirm").fadeIn();
 			});
 		},
 		'click .select-product': function(e) {
