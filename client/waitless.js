@@ -195,8 +195,12 @@ Template.notifications.product_info = function(p) {
 }
 
 Template.profile_pic.profile_pic = function() {
-	var dp = Meteor.user().profile.picture;
-	return dp;
+	if (Meteor.user()) {
+		var picture = Meteor.user().profile.picture;
+
+		if (!picture) return '';
+		return picture;
+	}
 }
 
 
@@ -207,7 +211,7 @@ var Router = Backbone.Router.extend({
   routes: {
   	'store': 'storeLoginView',
   	'store/:store': 'storeView',
-  	'': 'homeView',
+		'': 'home',
     'profile': 'profileView',
     'profile/createStore': 'createStoreView',
     'profile/createProduct': 'createProductView',

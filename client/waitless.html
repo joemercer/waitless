@@ -17,13 +17,13 @@
 </body>
 
 <template name="loggedOut">
-  {{#if partial 'storeLogin'}}
+	{{#if partial 'home'}}
+		{{> login_state}}
+  {{else}} {{#if partial 'storeLogin'}}
   	{{> storeLogin}}
   {{else}} {{#if partial 'storeView'}}
   	{{> storeView}}
-  {{else}} 
-    {{> login_state}}
-  {{/if}} {{/if}}
+  {{/if}} {{/if}} {{/if}}
 </template>
 
 <template name="login_state">
@@ -162,7 +162,7 @@
       <p id="credit_card">xxxxxxxxxxxxxx4347</p>
       <a id="credit_edit">edit</a>
     </div>
-    <div class="logout">{{loginButtons}}</div>
+    <div class="logout goto-home">{{loginButtons}}</div>
   </div><!-- end profile_wrapper-->
 </template>
 
@@ -270,7 +270,6 @@
     {{/each}}
   </ul>
 </template>
-
 
 <template name="profile_pic">
   <img src='{{profile_pic}}'>
