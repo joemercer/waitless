@@ -3,8 +3,8 @@ Accounts.loginServiceConfiguration.remove({
 });
 Accounts.loginServiceConfiguration.insert({
     service: "facebook",
-    appId: "1459026397651152",
-    secret: "53232bf57d941c28c5816e165890af6a"
+    appId: "607442322661481",
+    secret: "7731fdbd9a85748fc2e16038f8cfebe6"
 });
 
 Accounts.onCreateUser(function(options, user) {
