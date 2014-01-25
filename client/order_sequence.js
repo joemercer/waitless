@@ -48,7 +48,7 @@ Meteor.startup(function () {
 			var order = Session.get("order");
 			Orders.insert({
 				status: "requesting",
-				store_id: order.status_id,
+				store_id: order.store_id,
 				time_of_order: new Date().getTime(),
 				time_of_pickup: order.time_of_pickup,
 				total_amount: 2.95,
