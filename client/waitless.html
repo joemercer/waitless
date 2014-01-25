@@ -89,5 +89,17 @@
 
 <template name="createOrder">
   <h2>Create Order</h2>
+  <div id="choose_store" class="active">
+    <h4>Stores</h4>
+    {{> stores}}
+  </div>
   <button class="goto-home">Go Home</button>
+</template>
+
+<template name="stores">
+  <ul id="stores_list">
+    {{#each stores}}
+      <li class="select-store" data-test="{{_id}}" style="cursor: pointer">{{_id}} - {{name}} - {{location}}</li>
+    {{/each}}
+  </ul>
 </template>
