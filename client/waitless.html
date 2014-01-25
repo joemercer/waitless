@@ -105,9 +105,11 @@
   	{{> home}}
   {{else}} {{#if partial 'profile'}}
   	{{> profile}}
+  {{else}} {{#if partial 'pickFavDrink'}}
+    {{> pickFavDrink}}
   {{else}} {{#if partial 'createOrder'}}
   	{{> createOrder}}
-  {{/if}} {{/if}} {{/if}}
+  {{/if}} {{/if}} {{/if}} {{/if}}
 </template>
 
 <template name="home">
@@ -175,7 +177,7 @@
     </div>
     <img class="dash" src="/img/dash_brew.png">
     <ul class="coffee_edit">
-      <li>
+      <li class ="goto-selectFavDrink">
         <div class="coffee_cup"></div>
           <p>edit </br>quick brew</p>
       </li>
@@ -294,4 +296,54 @@
       <li>{{.}}</li>
     {{/each}}
   </ul>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+<template name="pickFavDrink">
+  <!-- PICK FAVORITE DRINK -->
+  <div class="order_wrapper wrapper" style="display: block">
+    <a class="goto-home back">back</a>
+    <div class="buy_process" id="buy_one" style="display:block">
+      <div class="buy_header">
+        <img src="/img/coffee_location.gif">
+        <h3>pick up from</h3>
+      </div>  <!-- end buy_header -->
+      {{> stores}}
+    </div><!-- end buy_one -->
+    <div class="buy_process" id="buy_two" style="display:none">
+      <div class="buy_header">
+        <img src="/img/products.gif">
+        <h3>so you want...</h3>
+      </div>  <!-- end buy_header -->
+      {{> products}}
+    </div><!-- end buy_two -->
+    <div class="buy_process" id="buy_three" style="display:none">
+      <div class="buy_header">
+        <img src="/img/frenchpress.gif">
+        <h3>size matters...</h3>
+      </div>  <!-- end buy_header -->
+      {{> sizes}}
+    </div><!-- end buy_three -->
+
+   <div class="buy_process" id="buy_confirm" style="display: none">
+      <div class="confirm_item">
+        <div class="coffee_cup"></div>
+          <p> <span id="size">medium</span> - <span>Double Double</span> - SLC</p>
+      </div><!-- confirm_item -->
+      <div class="item_brew">
+        <img id="brew_coffee" src="/img/brew_coffee.png">
+      </div>
+    </div><!-- end order_confirm -->
+  </div><!-- end order_wrapper -->
+
+  </div><!-- end order_wrapper -->
 </template>

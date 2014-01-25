@@ -78,6 +78,26 @@ Template.createOrder.events({
 	}
 });
 
+// # User Favorite Drink
+
+Template.profile.events({
+	'click .goto-selectFavDrink': function() {
+		router.pickFavDrinkView();
+	}
+});
+
+// Set user preferences to session
+Template.stores.selected = function(){
+	return Session.set("selected_store", this._id);
+}
+Template.products.selected = function(){
+	return Session.set("selected_product", this._id);
+}
+Template.sizes.selected = function(){
+	return Session.set("selected_size", this._id);
+}
+
+
 // # products
 // __________
 
@@ -143,7 +163,13 @@ var Router = Backbone.Router.extend({
   createOrderView: function () {
   	Session.set('partial', 'createOrder');
   	this.navigate('createOrder', true);
+  },
+
+  pickFavDrinkView: function () {
+  	Session.set('partial', 'pickFavDrink');
+  	this.navigate('pickFavDrink', true);
   }
+
 });
 
 router = new Router;
