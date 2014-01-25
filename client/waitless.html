@@ -17,13 +17,13 @@
 </body>
 
 <template name="loggedOut">
-  {{#if partial 'storeLogin'}}
+	{{#if partial 'home'}}
+		{{> login_state}}
+  {{else}} {{#if partial 'storeLogin'}}
   	{{> storeLogin}}
   {{else}} {{#if partial 'storeView'}}
   	{{> storeView}}
-  {{else}} 
-    {{> login_state}}
-  {{/if}} {{/if}}
+  {{/if}} {{/if}} {{/if}}
 </template>
 
 <template name="login_state">
@@ -79,7 +79,6 @@
 				</li>
 			{{/each}}
     </ul><!-- end brewlist -->
-
     <a class="brew_complete">brew complete</a>
   </div><!-- end upcoming_order_wrapper -->
 </template>
@@ -271,7 +270,6 @@
     {{/each}}
   </ul>
 </template>
-
 
 <template name="profile_pic">
   <img src='{{profile_pic}}'>
