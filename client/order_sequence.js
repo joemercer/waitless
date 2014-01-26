@@ -3,6 +3,7 @@ Meteor.startup(function () {
 
 	Session.set("order", {});
 	Session.set("product", {});
+	Session.set("favDrink", {});
 	Template.createOrder.events({
 		'click .select-store': function(e) {
 			var order = Session.get("order");
@@ -60,45 +61,49 @@ Meteor.startup(function () {
 		}
 	});
 
-		Template.pickFavDrink.events({
+
+
+
+
+
+Template.pickFavDrink.events({
 		'click .select-store': function(e) {
-			var order = Session.get("order");
-			order.store_id = this._id;
-			Session.set("order", order);
-
 			Session.set('activeStore', this._id);
+			var user = Meteor.user()._id;
+			var selectedStore = this._id;
 
-			$("#buy_two").addClass("active");
-			$("#buy_one").fadeOut( function() {
-				$(this).removeClass("active");
-				$("#buy_two").fadeIn();
-			});
+
+			Meteor.users.update({_id:user}, {$set:{"profile.store":selectedStore}});
+
+			router.favDrinkChooseProduct();
 		},
 		'click .select-product': function(e) {
-			// var order = Session.get("order");
-			// order.items = [this._id, 1];
-			// Session.set("order", order);
 			var product = Session.get("product");
 			product.name = this.item;
 			product.product_id = this._id;
 			Session.set("product", product);
 
-			$("#buy_three").addClass("active");
-			$("#buy_two").fadeOut( function() {
-				$(this).removeClass("active");
-				$("#buy_three").fadeIn();
-			})
+			var user = Meteor.user()._id;
+			var selectedProduct = this._id;
+
+			Meteor.users.update({_id:user}, {$set:{"profile.drink":selectedProduct}});
+
+			router.favDrinkChooseSize();
 		},
 		'click .select-size': function(e) {
 			var order = Session.get("order");
-			order.items = [this._id, 1];
+			var user = Meteor.user()._id;
+			var selectedSize = this._id;
+
+			Meteor.users.update({_id:user}, {$set:{"profile.dsize":selectedSize}});
 			Session.set("order", order);
 
-			$("#buy_four").addClass("active");
-			$("#buy_three").fadeOut( function() {
-				$(this).removeClass("active");
-				$("#buy_four").fadeIn();
-			})
+			router.favDrinkVerify();
+		},
+		'click .item_brew': function(e) {
+			var order = Session.get("order");
+
+			router.home();
 		}
 	});
 

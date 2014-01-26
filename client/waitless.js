@@ -132,15 +132,6 @@ Template.profile.events({
 });
 
 // Set user preferences to session
-Template.stores.selected = function(){
-	return Session.set("selected_store", this._id);
-}
-Template.products.selected = function(){
-	return Session.set("selected_product", this._id);
-}
-Template.sizes.selected = function(){
-	return Session.set("selected_size", this._id);
-}
 
 
 // # products
@@ -236,7 +227,12 @@ var Router = Backbone.Router.extend({
     'createOrder/product': 'createOrderChooseProduct',
     'createOrder/size': 'createOrderChooseSize',
     'createOrder/time': 'createOrderChooseTime',
-    'createOrder/verify': 'createOrderChooseVerify'
+    'createOrder/verify': 'createOrderChooseVerify',
+    'favDrink':'pickFavDrinkView',
+    'favDrink/store':'favDrinkChooseStore',
+    'favDrink/product': 'favDrinkChooseProduct',
+    'favDrink/size':'favDrinkChooseSize',
+    'favDrink/verify':'favDrinkVerify'
   },
   storeLoginView: function() {
   	Session.set('partial', 'storeLogin');
@@ -259,10 +255,6 @@ var Router = Backbone.Router.extend({
   	this.navigate('createOrder', true);
   },
 
-  pickFavDrinkView: function () {
-  	Session.set('partial', 'pickFavDrink');
-  	this.navigate('pickFavDrink', true);
-  },
   createOrderChooseStore: function () {
   	Session.set('partial', 'createOrder');
 
@@ -309,6 +301,59 @@ var Router = Backbone.Router.extend({
 		$("#buy_four").fadeOut( function() {
 			$(this).removeClass("active");
 			router.navigate('createOrder/verify', true);
+			$("#buy_confirm").fadeIn();
+		});
+  },
+
+
+
+
+
+
+
+
+  pickFavDrinkView: function () {
+ 	Session.set('partial', 'pickFavDrink');
+  	this.navigate('favDrink', true);
+  },
+
+    favDrinkChooseStore: function () {
+  	Session.set('partial', 'pickFavDrink');
+
+  	$("#buy_one").addClass("active");
+  	router.navigate('favDrink/store', true);
+		$("#buy_one").fadeIn();
+  },
+  
+  favDrinkChooseProduct: function () {
+  	Session.set('partial', 'pickFavDrink');
+
+  	// change the view
+  	$("#buy_two").addClass("active");
+		$("#buy_one").fadeOut( function() {
+			$(this).removeClass("active");
+			router.navigate('favDrink/product', true);
+			$("#buy_two").fadeIn();
+		});
+  },
+  favDrinkChooseSize: function () {
+  	Session.set('partial', 'pickFavDrink');
+
+  	// change the view
+  	$("#buy_three").addClass("active");
+		$("#buy_two").fadeOut( function() {
+			$(this).removeClass("active");
+			router.navigate('favDrink/size', true);
+			$("#buy_three").fadeIn();
+		});
+  },
+  favDrinkVerify: function () {
+  	Session.set('partial', 'pickFavDrink');
+
+  	$("#buy_confirm").addClass("active");
+		$("#buy_three").fadeOut( function() {
+			$(this).removeClass("active");
+			router.navigate('favDrink/verify', true);
 			$("#buy_confirm").fadeIn();
 		});
   }
