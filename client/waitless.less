@@ -93,8 +93,12 @@ p{
   border-radius: @radius;
 }
 
+html{
+	background: rgb(236, 236, 226);
+}
 /* BODY */
 body{
+	background: rgb(236, 236, 226);
 	.back{
 		.block;
 		.absolute;
@@ -132,6 +136,17 @@ body{
 	.dash{
 		width: 100%;
 		padding-top: 10px;
+	}
+	.profile_setting{
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		background: transparent url('/img/setting.png') center center no-repeat;
+		background-size: contain;
+		cursor: pointer;
+		opacity: 0.5;
 	}
 	.logout{
 		.absolute;
@@ -209,7 +224,7 @@ body{
 	.login_wrapper{
 		.block;
 		margin: auto;
-		background: @bg url('img/login/login_bg.jpg') center center no-repeat;
+		background: @bg url('/img/login/login_bg.jpg') center center no-repeat;
 		background-size: cover;
 		width: 100%;
 		height: 100vh;
@@ -361,7 +376,7 @@ body{
 						opacity: 1;
 						margin-top: 59px;
 					}
-				}
+				}//li
 			}//ul
 		}//quick_brew
 		.user_notification{
@@ -443,7 +458,6 @@ body{
 				li:nth-child(4){
 					background: transparent url('/img/cup_xlarge.png') 20px center no-repeat;
 					background-size: 18px;
-					
 				}
 			}//ul
 		}//buy_three
@@ -490,6 +504,7 @@ body{
 		}//buy_confirm
 		.buy_process{
 			height: 100vh;
+			max-height: 640px;
 			.buy_header{
 				.block;
 				padding: 30px 0px 10px 0px;
@@ -665,4 +680,23 @@ body{
 			background: rgba(255, 255, 255, 0.09);
 		}
 	}//brewlist_wrapper
+
+	.wrapper{
+		max-width: 400px;
+		margin-top: 40px;
+		margin-bottom: 20px;
+		max-height: 640px;
+		margin-left: auto;
+		margin-right: auto;
+		position:relative;
+		-webkit-box-shadow: 7px 7px 0px 0px rgba(50, 50, 50, 0.75);
+		-moz-box-shadow:    7px 7px 0px 0px rgba(50, 50, 50, 0.75);
+		box-shadow:         7px 7px 0px 0px rgba(50, 50, 50, 0.75);
+	}
 }//body
+
+@media(max-width: 400px){
+	.wrapper{
+		margin: 0px !important;
+	}
+}

@@ -107,7 +107,7 @@ if (Meteor.isServer) {
             location: "SLC"
           })._id,
           time_of_order: new Date().getTime(),
-          time_of_pickup: 139078683626932,
+          time_of_pickup: "14:25",
           total_amount: 1.25,
           user_id: "FAKEUSER",
           items: [
@@ -139,7 +139,7 @@ if (Meteor.isServer) {
             location: "SLC"
           })._id,
           time_of_order: new Date().getTime(),
-          time_of_pickup: 139078683626932,
+          time_of_pickup: "14:30",
           total_amount: 13.75,
           user_id: "FAKEUSER",
           items: [
@@ -161,7 +161,7 @@ if (Meteor.isServer) {
             location: "DC"
           })._id,
           time_of_order: new Date().getTime(),
-          time_of_pickup: 139078683626932,
+          time_of_pickup: "15:45",
           total_amount: 1.25,
           user_id: "FAKEUSER",
           items: [

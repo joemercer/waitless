@@ -50,6 +50,7 @@ Template.storeView.events({
 
 Template.storeView.orders = function() {
 	var store = Session.get('loggedInStore');
+
 	return Orders.find({
 		store_id: store._id
 	});
@@ -59,9 +60,13 @@ Template.storeView.username = function(order) {
 	if (order.user_id === "FAKEUSER") {
 		return "Joe Mercer";
 	}
-	return Meter.users.findOne({
+	var user = Meteor.users.findOne({
 		_id: order.user_id
-	}).profile.name;
+	});
+
+	if (!user) return 'Suzy Q';
+
+	return user.profile.name;
 };
 
 Template.storeView.itemName = function(order) {
@@ -78,8 +83,7 @@ Template.storeView.itemName = function(order) {
 };
 
 Template.storeView.pickupTime = function(order) {
-	var time = new Date(order.time_of_pickup);
-	return time.getHours() + ':' + time.getMinutes();
+	return order.time_of_pickup;
 };
 
 // # Logged In
@@ -206,8 +210,12 @@ Template.notifications.product_info = function(p) {
 }
 
 Template.profile_pic.profile_pic = function() {
-	var dp = Meteor.user().profile.picture;
-	return dp;
+	if (Meteor.user()) {
+		var picture = Meteor.user().profile.picture;
+
+		if (!picture) return '';
+		return picture;
+	}
 }
 
 
@@ -218,7 +226,7 @@ var Router = Backbone.Router.extend({
   routes: {
   	'store': 'storeLoginView',
   	'store/:store': 'storeView',
-  	'': 'homeView',
+		'': 'home',
     'profile': 'profileView',
     'profile/createStore': 'createStoreView',
     'profile/createProduct': 'createProductView',
@@ -239,6 +247,11 @@ var Router = Backbone.Router.extend({
   	this.navigate('store', true);
   },
   storeView: function(storeName) {
+  	var store = Session.get('loggedInStore');
+  	if (!store) {
+  		this.home();
+  		return;
+  	}
   	Session.set('partial', 'storeView');
   	this.navigate('store/'+storeName, true);
   },
@@ -261,6 +274,8 @@ var Router = Backbone.Router.extend({
   	$("#buy_one").addClass("active");
   	router.navigate('createOrder/store', true);
 		$("#buy_one").fadeIn();
+
+		$("#buy_two, #buy_three, #buy_four, #buy_confirm").hide();
   },
   createOrderChooseProduct: function () {
   	Session.set('partial', 'createOrder');
@@ -272,6 +287,7 @@ var Router = Backbone.Router.extend({
 			router.navigate('createOrder/product', true);
 			$("#buy_two").fadeIn();
 		});
+		$("#buy_three, #buy_four, #buy_confirm").hide();
   },
   createOrderChooseSize: function () {
   	Session.set('partial', 'createOrder');
@@ -283,6 +299,7 @@ var Router = Backbone.Router.extend({
 			router.navigate('createOrder/size', true);
 			$("#buy_three").fadeIn();
 		});
+		$("#buy_one, #buy_four, #buy_confirm").hide();
   },
   createOrderChooseTime: function () {
   	Session.set('partial', 'createOrder');
@@ -293,6 +310,7 @@ var Router = Backbone.Router.extend({
 			router.navigate('createOrder/time', true);
 			$("#buy_four").fadeIn();
 		});
+		$("#buy_one, #buy_two, #buy_confirm").hide();
   },
   createOrderVerify: function () {
   	Session.set('partial', 'createOrder');
@@ -303,6 +321,7 @@ var Router = Backbone.Router.extend({
 			router.navigate('createOrder/verify', true);
 			$("#buy_confirm").fadeIn();
 		});
+		$("#buy_one, #buy_two, #buy_three").hide();
   },
 
 
