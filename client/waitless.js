@@ -180,7 +180,15 @@ Template.confirmation.confirmation = function() {
 // # notifications
 Template.notifications.notifications = function() {
 	var user = Meteor.user()._id;
-	var orders = Orders.find({user_id: user});
+	var orders = Orders.find(
+		{
+			user_id: user
+		},
+		{
+			sort: {time_of_order: 'desc'},
+			limit: 5
+		}
+	);
 	return orders;
 }
 
