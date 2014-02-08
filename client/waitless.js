@@ -53,6 +53,9 @@ Template.storeView.orders = function() {
 
 	return Orders.find({
 		store_id: store._id
+	},
+	{
+		sort: {time_of_order: 'desc'}
 	});
 };
 
